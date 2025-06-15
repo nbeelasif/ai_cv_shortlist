@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Processing Candidates</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f8f9fa;
+    }
+    .progress-container {
+      width: 60%;
+      text-align: center;
+    }
+    .spinner-border {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-container">
+    <div class="spinner-border text-primary mb-3" role="status">
+      <span class="visually-hidden">Processing...</span>
+    </div>
+    <h5 class="mb-2">Analyzing CVs and generating summaries...</h5>
+    <p class="text-muted">This may take a moment. Please stay on this page.</p>
+
+    <div class="progress mt-4 mb-2" style="height: 25px;">
+      <div id="progress-bar" class="progress-bar progress-bar-striped progress-bar-animated bg-success" 
+           role="progressbar" style="width: 0%">0%</div>
+    </div>
+    <div id="status-text" class="text-secondary">Initializing...</div>
+  </div>
+
+  <script>
+    // Trigger processing in background
+    fetch('/process').catch(err => console.error('Processing start failed:', err));
+
+    // Connect to server-sent events
+    const eventSource = new EventSource("/progress_stream");
+    eventSource.onmessage = function(event) {
+      const data = JSON.parse(event.data);
+      const bar = document.getElementById("progress-bar");
+      const statusText = document.getElementById("status-text");
+
+      bar.style.width = data.percent + "%";
+      bar.innerText = data.percent + "%";
+      statusText.innerText = data.message;
+
+      if (data.complete) {
+        eventSource.close();
+        setTimeout(() => {
+          window.location.href = "/results";
+        }, 1000);
+      }
+    };
+  </script>
+</body>
+</html>

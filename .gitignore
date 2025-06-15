@@ -1,0 +1,60 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+.Python
+
+# Flask-related
+instance/
+*.db
+*.sqlite3
+
+# Flask Migrations
+migrations/
+
+# Pytest / coverage
+.coverage
+.pytest_cache/
+htmlcov/
+
+# Environment variables
+.env
+.env.*
+
+# VS Code
+.vscode/
+
+# JetBrains IDEs
+.idea/
+
+# Mac / Linux system files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Uploaded files / user data
+uploads/
+static/images/candidate_photos/
+uploads_temp/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Cache
+*.cache
+.cache/
+
+# Ollama LLM or model cache (if used)
+ollama_models/

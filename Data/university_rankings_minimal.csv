@@ -1,0 +1,1498 @@
+﻿2024 RANK,Institution Name,Country Code,Country
+1,Massachusetts Institute of Technology (MIT) ,US,United States
+2,University of Cambridge,UK,United Kingdom
+3,University of Oxford,UK,United Kingdom
+4,Harvard University,US,United States
+5,Stanford University,US,United States
+6,Imperial College London,UK,United Kingdom
+7,ETH Zurich - Swiss Federal Institute of Technology,CH,Switzerland
+8,National University of Singapore (NUS),SG,Singapore
+9,UCL,UK,United Kingdom
+10,"University of California, Berkeley (UCB)",US,United States
+11,University of Chicago,US,United States
+12,University of Pennsylvania,US,United States
+13,Cornell University,US,United States
+14,The University of Melbourne,AU,Australia
+15,California Institute of Technology (Caltech),US,United States
+16,Yale University,US,United States
+17,Peking University,CN,China (Mainland)
+17,Princeton University,US,United States
+19,The University of New South Wales (UNSW Sydney),AU,Australia
+19,The University of Sydney,AU,Australia
+21,University of Toronto,CA,Canada
+22,The University of Edinburgh,UK,United Kingdom
+23,Columbia University,US,United States
+24,Université PSL,FR,France
+25,Tsinghua University,CN,China (Mainland)
+26,"Nanyang Technological University, Singapore (NTU)",SG,Singapore
+26,The University of Hong Kong,HK,Hong Kong SAR
+28,Johns Hopkins University,US,United States
+28,The University of Tokyo,JP,Japan
+29,"University of California, Los Angeles (UCLA)",US,United States
+30,McGill University,CA,Canada
+32,The University of Manchester,UK,United Kingdom
+33,University of Michigan-Ann Arbor,US,United States
+34,The Australian National University,AU,Australia
+34,University of British Columbia,CA,Canada
+36,EPFL,CH,Switzerland
+37,Technical University of Munich,DE,Germany
+38,Institut Polytechnique de Paris,FR,France
+38,New York University (NYU),US,United States
+40,King's College London,UK,United Kingdom
+41,Seoul National University,KR,South Korea
+42,Monash University,AU,Australia
+43,The University of Queensland,AU,Australia
+44,Zhejiang University,CN,China (Mainland)
+45,The London School of Economics and Political Science (LSE),UK,United Kingdom
+46,Kyoto University,JP,Japan
+47,Delft University of Technology,NL,Netherlands
+47,Northwestern University,US,United States
+47,The Chinese University of Hong Kong (CUHK),HK,Hong Kong SAR
+50,Fudan University,CN,China (Mainland)
+51,Shanghai Jiao Tong University,CN,China (Mainland)
+52,Carnegie Mellon University,US,United States
+53,University of Amsterdam,NL,Netherlands
+54,Ludwig-Maximilians-Universität München,DE,Germany
+55,University of Bristol,UK,United Kingdom
+56,KAIST - Korea Advanced Institute of Science & Technology,KR,South Korea
+57,Duke University,US,United States
+58,University of Texas at Austin,US,United States
+59,Sorbonne University,FR,France
+60,The Hong Kong University of Science and Technology,HK,Hong Kong SAR
+61,KU Leuven,BE,Belgium
+62,"University of California, San Diego (UCSD)",US,United States
+63,University of Washington,US,United States
+64,University of Illinois at Urbana-Champaign,US,United States
+65,The Hong Kong Polytechnic University,HK,Hong Kong SAR
+65,Universiti Malaya (UM),MY,Malaysia
+67,The University of Warwick,UK,United Kingdom
+68,The University of Auckland,NZ,New Zealand
+69,National Taiwan University (NTU),TW,Taiwan
+70,City University of Hong Kong,HK,Hong Kong SAR
+71,Université Paris-Saclay,FR,France
+72,The University of Western Australia,AU,Australia
+73,Brown University,US,United States
+73,KTH Royal Institute of Technology ,SE,Sweden
+75,University of Leeds,UK,United Kingdom
+76,University of Glasgow,UK,United Kingdom
+76,Yonsei University,KR,South Korea
+78,Durham University,UK,United Kingdom
+79,Korea University,KR,South Korea
+80,Osaka University,JP,Japan
+81,"Trinity College Dublin, The University of Dublin",IE,Ireland
+81,University of Southampton,UK,United Kingdom
+83,Pennsylvania State University,US,United States
+84,University of Birmingham,UK,United Kingdom
+85,Lund University,SE,Sweden
+85,Universidade de São Paulo,BR,Brazil
+87,Lomonosov Moscow State University,RU,Russia
+87,Ruprecht-Karls-Universität Heidelberg,DE,Germany
+89,The University of Adelaide,AU,Australia
+90,University of Technology Sydney,AU,Australia
+91,Tokyo Institute of Technology (Tokyo Tech),JP,Japan
+91,University of Zurich,CH,Switzerland
+93,Boston University,US,United States
+93,Universidad Nacional Autónoma de México (UNAM),MX,Mexico
+95,Universidad de Buenos Aires (UBA),AR,Argentina
+95,University of St Andrews,UK,United Kingdom
+97,Georgia Institute of Technology,US,United States
+98,Freie Universitaet Berlin,DE,Germany
+99,Purdue University,US,United States
+100,Pohang University of Science And Technology (POSTECH),KR,South Korea
+100,University of Nottingham,UK,United Kingdom
+102,University of Wisconsin-Madison,US,United States
+103,Pontificia Universidad Católica de Chile (UC),CL,Chile
+104,The University of Sheffield,UK,United Kingdom
+105,Uppsala University,SE,Sweden
+106,RWTH Aachen University,DE,Germany
+107,University of Copenhagen,DK,Denmark
+107,Utrecht University,NL,Netherlands
+109,Aalto University,FI,Finland
+110,Newcastle University,UK,United Kingdom
+111,University of Alberta,CA,Canada
+112,University of Waterloo,CA,Canada
+113,Tohoku University,JP,Japan
+114,Western University,CA,Canada
+115,University of Helsinki,FI,Finland
+116,University of Southern California,US,United States
+117,University of Oslo,NO,Norway
+118,Stockholm University,SE,Sweden
+119,"KIT, Karlsruhe Institute of Technology",DE,Germany
+120,Humboldt-Universität zu Berlin,DE,Germany
+121,Technical University of Denmark,DK,Denmark
+122,Lancaster University,UK,United Kingdom
+123,Politecnico di Milano,IT,Italy
+124,Eindhoven University of Technology,NL,Netherlands
+124,University of Basel,CH,Switzerland
+126,Leiden University,NL,Netherlands
+126,University of Bern,CH,Switzerland
+128,University of Geneva,CH,Switzerland
+129,Chalmers University of Technology,SE,Sweden
+130,Macquarie University,AU,Australia
+130,University of Vienna,AT,Austria
+132,"University of California, Davis",US,United States
+132,"University of North Carolina, Chapel Hill",US,United States
+134,Sapienza University of Rome,IT,Italy
+134,Texas A&M University,US,United States
+136,Michigan State University,US,United States
+137,Universiti Sains Malaysia (USM),MY,Malaysia
+137,University of Science and Technology of China,CN,China (Mainland)
+139,University of Groningen,NL,Netherlands
+140,RMIT University,AU,Australia
+141,Nanjing University,CN,China (Mainland)
+141,Université de Montréal ,CA,Canada
+143,Aarhus University,DK,Denmark
+143,King Abdulaziz University (KAU),SA,Saudi Arabia
+145,Queen Mary University of London,UK,United Kingdom
+145,Rice University,US,United States
+145,Sungkyunkwan University(SKKU),KR,South Korea
+148,University of Bath,UK,United Kingdom
+149,Indian Institute of Technology Bombay (IITB),IN,India
+149,Universitat Autònoma de Barcelona,ES,Spain
+151,The Ohio State University,US,United States
+151,Wageningen University & Research,NL,Netherlands
+153,The University of Exeter,UK,United Kingdom
+154,Alma Mater Studiorum - University of Bologna,IT,Italy
+154,Cardiff University,UK,United Kingdom
+154,Technische Universität Berlin (TU Berlin),DE,Germany
+154,Washington University in St. Louis,US,United States
+158,Universiti Putra Malaysia (UPM),MY,Malaysia
+159,Ghent University,BE,Belgium
+159,Universidad de Chile,CL,Chile
+159,Universiti Kebangsaan Malaysia (UKM),MY,Malaysia
+162,University of Wollongong,AU,Australia
+163,"University of California, Santa Barbara (UCSB)",US,United States
+164,Hanyang University,KR,South Korea
+164,Kyushu University,JP,Japan
+164,Universitat de Barcelona,ES,Spain
+167,University of York,UK,United Kingdom
+168,University of Florida,US,United States
+169,"University of Maryland, College Park",US,United States
+169,University of Reading,UK,United Kingdom
+171,Complutense University of Madrid,ES,Spain
+171,University College Dublin,IE,Ireland
+173,Qatar University,QA,Qatar
+173,"The University of Newcastle, Australia (UON)",AU,Australia
+173,University of Cape Town,ZA,South Africa
+176,Erasmus University Rotterdam ,NL,Netherlands
+176,Nagoya University,JP,Japan
+176,University of Liverpool,UK,United Kingdom
+179,Arizona State University,US,United States
+180,King Fahd University of Petroleum & Minerals,SA,Saudi Arabia
+180,Université catholique de Louvain (UCLouvain),BE,Belgium
+182,University of Calgary,CA,Canada
+183,Curtin University,AU,Australia
+184,École Normale Supérieure de Lyon,FR,France
+184,Technische Universität Wien,AT,Austria
+184,Tecnológico de Monterrey,MX,Mexico
+187,University of Gothenburg,SE,Sweden
+188,Universiti Teknologi Malaysia ,MY,Malaysia
+189,McMaster University,CA,Canada
+189,Queensland University of Technology (QUT),AU,Australia
+189,Universite libre de Bruxelles,BE,Belgium
+192,Albert-Ludwigs-Universitaet Freiburg,DE,Germany
+192,Ecole des Ponts ParisTech,FR,France
+194,Wuhan University,CN,China (Mainland)
+195,University of Minnesota Twin Cities,US,United States
+196,Hokkaido University,JP,Japan
+197,Indian Institute of Technology Delhi (IITD),IN,India
+198,Universidad de los Andes,CO,Colombia
+199,Emory University,US,United States
+199,Universidad Autónoma de Madrid,ES,Spain
+199,Waseda University,JP,Japan
+202,Queen's University Belfast,UK,United Kingdom
+203,King Saud University,SA,Saudi Arabia
+203,University of Ottawa,CA,Canada
+205,Universität Hamburg,DE,Germany
+206,University of Otago,NZ,New Zealand
+207,Vrije Universiteit Amsterdam,NL,Netherlands
+208,University of Aberdeen,UK,United Kingdom
+209,Queen's University at Kingston,CA,Canada
+210,University of Twente,NL,Netherlands
+211,Chulalongkorn University,TH,Thailand
+212,Loughborough University,UK,United Kingdom
+213,Eberhard Karls Universität Tübingen,DE,Germany
+214,Keio University,JP,Japan
+215,Tel Aviv University,IL,Israel
+216,Tongji University,CN,China (Mainland)
+217,National Yang Ming Chiao Tung University,TW,Taiwan
+218,University of Sussex,UK,United Kingdom
+219,Università di Padova,IT,Italy
+220,Universidade Estadual de Campinas (Unicamp),BR,Brazil
+220,University of Lausanne,CH,Switzerland
+222,Radboud University ,NL,Netherlands
+222,University of Pittsburgh,US,United States
+224,University of Rochester,US,United States
+225,Indian Institute of Science,IN,India
+226,American University of Beirut (AUB),LB,Lebanon
+226,Universidad Nacional de Colombia,CO,Colombia
+228,National Cheng Kung University (NCKU),TW,Taiwan
+229,Friedrich-Alexander-Universität Erlangen-Nürnberg,DE,Germany
+230,Al-Farabi Kazakh National University,KZ,Kazakhstan
+230,Khalifa University of Science and Technology,AE,United Arab Emirates
+232,University of Göttingen,DE,Germany
+233,Deakin University,AU,Australia
+233,National Tsing Hua University,TW,Taiwan
+235,Heriot-Watt University,UK,United Kingdom
+236,Université de Paris-Cité,FR,France
+237,Dartmouth College,US,United States
+237,Universitas Indonesia,ID,Indonesia
+239,Massey University,NZ,New Zealand
+239,Rheinische Friedrich-Wilhelms-Universität Bonn,DE,Germany
+241,Victoria University of Wellington,NZ,New Zealand
+242,La Trobe University,AU,Australia
+243,Griffith University,AU,Australia
+244,University of Surrey,UK,United Kingdom
+245,University of Massachusetts Amherst,US,United States
+246,Technical University of Darmstadt,DE,Germany
+246,Technische Universität Dresden,DE,Germany
+248,Charles University,CZ,Czech Republic
+248,University of Antwerp,BE,Belgium
+250,University of Waikato,NZ,New Zealand
+251,The Hebrew University of Jerusalem,IL,Israel
+252,Politecnico di Torino,IT,Italy
+253,University of Porto,PT,Portugal
+254,University of Macau,MO,Macau SAR
+255,Case Western Reserve University,US,United States
+256,Harbin Institute of Technology,CN,China (Mainland)
+256,Maastricht University ,NL,Netherlands
+256,University of Canterbury | Te Whare Wānanga o Waitaha,NZ,New Zealand
+259,Vrije Universiteit Brussel (VUB),BE,Belgium
+260,University of Virginia,US,United States
+261,Vanderbilt University,US,United States
+262,University of Warsaw ,PL,Poland
+263,Gadjah Mada University,ID,Indonesia
+264,University of Colorado Boulder,US,United States
+264,University of Witwatersrand,ZA,South Africa
+266,Ulsan National Institute of Science and Technology (UNIST),KR,South Korea
+266,University of Lisbon ,PT,Portugal
+268,Linköping University,SE,Sweden
+268,"University of California, Irvine",US,United States
+268,University of Cologne,DE,Germany
+271,Indian Institute of Technology Kharagpur (IIT-KGP),IN,India
+272,Beijing Normal University ,CN,China (Mainland)
+272,University of Leicester,UK,United Kingdom
+274,North Carolina State University,US,United States
+275,Huazhong University of Science and Technology,CN,China (Mainland)
+276,University of Milan,IT,Italy
+276,University of Strathclyde,UK,United Kingdom
+278,Indian Institute of Technology Kanpur (IITK),IN,India
+278,University of Miami,US,United States
+280,University of Navarra,ES,Spain
+281,Bandung Institute of Technology (ITB),ID,Indonesia
+281,University of Bergen,NO,Norway
+283,Stellenbosch University,ZA,South Africa
+284,Taylor's University,MY,Malaysia
+285,Indian Institute of Technology Madras (IITM),IN,India
+285,Swinburne University of Technology,AU,Australia
+285,The University of Arizona,US,United States
+285,Tianjin University,CN,China (Mainland)
+289,University of Galway,IE,Ireland
+290,United Arab Emirates University,AE,United Arab Emirates
+291,Xi’an Jiaotong University,CN,China (Mainland)
+292,Norwegian University of Science And Technology,NO,Norway
+292,University College Cork,IE,Ireland
+294,Université Grenoble Alpes,FR,France
+295,Hong Kong Baptist University,HK,Hong Kong SAR
+295,University of East Anglia (UEA),UK,United Kingdom
+297,Georgetown University,US,United States
+298,Dalhousie University,CA,Canada
+299,Rutgers University–New Brunswick,US,United States
+300,UCSI University,MY,Malaysia
+301,Southern University of Science and Technology,CN,China (Mainland)
+302,Goethe-University Frankfurt am Main,DE,Germany
+302,Virginia Polytechnic Institute and State University,US,United States
+304,Jagiellonian University,PL,Poland
+304,University of Notre Dame,US,United States
+306,University of Johannesburg,ZA,South Africa
+307,Daegu Gyeongbuk Institute of Science and Technology (DGIST),KR,South Korea
+307,Swansea University,UK,United Kingdom
+307,Universiti Teknologi PETRONAS (UTP),MY,Malaysia
+307,University of Tasmania,AU,Australia
+310,Hamad Bin Khalifa University,QA,Qatar
+310,Universitat Pompeu Fabra (Barcelona),ES,Spain
+312,Universität Stuttgart,DE,Germany
+313,Indiana University Bloomington,US,United States
+313,University of Oulu,FI,Finland
+315,Quaid-i-Azam University,PK,Pakistan
+315,Saint Petersburg State University,RU,Russia
+315,University of Turku,FI,Finland
+318,Simon Fraser University,CA,Canada
+319,Bauman Moscow State Technical University,RU,Russia
+319,Sciences Po ,FR,France
+319,Universidad Carlos III de Madrid (UC3M),ES,Spain
+322,University of Victoria (UVic),CA,Canada
+323,Sun Yat-sen University,CN,China (Mainland)
+323,University of Illinois at Chicago (UIC),US,United States
+323,University of Pretoria,ZA,South Africa
+326,University of South Australia,AU,Australia
+326,University of Southern Denmark (SDU),DK,Denmark
+328,"City, University of London",UK,United Kingdom
+328,Gwangju Institute of Science and Technology (GIST),KR,South Korea
+328,Université Paris 1 Panthéon-Sorbonne ,FR,France
+328,USI - Università della Svizzera italiana,CH,Switzerland
+332,Kyung Hee University,KR,South Korea
+332,"University of California, Santa Cruz",US,United States
+334,Sharif University of Technology,IR,"Iran, Islamic Republic of"
+335,University of Naples - Federico II,IT,Italy
+336,Aalborg University,DK,Denmark
+336,Middle East Technical University,TR,Turkey
+336,Pontificia Universidad Católica del Perú,PE,Peru
+336,University of Kent,UK,United Kingdom
+340,Beijing Institute of Technology,CN,China (Mainland)
+340,George Washington University,US,United States
+342,RUDN University,RU,Russia
+343,Brunel University London,UK,United Kingdom
+344,University of Aveiro,PT,Portugal
+345,Airlangga University,ID,Indonesia
+345,University of Saskatchewan,CA,Canada
+347,National Technical University of Athens,GR,Greece
+347,Pontificia Universidad Javeriana,CO,Colombia
+349,Universidad Politécnica de Madrid (UPM),ES,Spain
+349,University of Pisa,IT,Italy
+351,Lappeenranta-Lahti University of Technology LUT,FI,Finland
+351,University of Coimbra,PT,Portugal
+353,York University,CA,Canada
+354,Universitat Politècnica de Catalunya · BarcelonaTech (UPC),ES,Spain
+355,L.N. Gumilyov Eurasian National University (ENU),KZ,Kazakhstan
+355,Sichuan University,CN,China (Mainland)
+355,University of Tsukuba,JP,Japan
+358,University of Florence,IT,Italy
+358,University of Tartu,EE,Estonia
+360,Shandong University,CN,China (Mainland)
+360,University of Tehran,IR,"Iran, Islamic Republic of"
+362,Lincoln University ,NZ,New Zealand
+362,Universität Innsbruck,AT,Austria
+364,American University of Sharjah,AE,United Arab Emirates
+364,Indian Institute of Technology Guwahati (IITG),IN,India
+364,University of Turin,IT,Italy
+367,National University of Sciences And Technology (NUST) Islamabad,PK,Pakistan
+368,University of Cyprus (UCY),CY,Cyprus
+369,Indian Institute of Technology Roorkee (IITR),IN,India
+369,Yeshiva University,US,United States
+371,Cairo University,EG,Egypt
+371,Tilburg University,NL,Netherlands
+371,Universidade Federal do Rio de Janeiro,BR,Brazil
+374,"Birkbeck, University of London",UK,United Kingdom
+375, Western Sydney University,AU,Australia
+375,Amirkabir University of Technology,IR,"Iran, Islamic Republic of"
+375,Northeastern University,US,United States
+375,Ruhr-Universität Bochum,DE,Germany
+379,Tufts University,US,United States
+380,Flinders University,AU,Australia
+381,University of Luxembourg,LU,Luxembourg
+382,Mahidol University,TH,Thailand
+382,Université de Montpellier,FR,France
+384,Nankai University,CN,China (Mainland)
+384,Westfälische Wilhelms-Universität Münster ,DE,Germany
+386,University of Hawaiʻi at Mānoa,US,United States
+387,Aix-Marseille University,FR,France
+387,Belarusian State University,BY,Belarus
+387,Concordia University,CA,Canada
+387,National Taiwan University of Science and Technology (Taiwan Tech),TW,Taiwan
+387,Universiti Brunei Darussalam (UBD),BN,Brunei
+392,Institut National des Sciences Appliquées de Lyon (INSA),FR,France
+392,South China University of Technology,CN,China (Mainland)
+392,Technion - Israel Institute of Technology,IL,Israel
+392,Xiamen University,CN,China (Mainland)
+396,Justus-Liebig-University Giessen,DE,Germany
+396,Kazan (Volga region) Federal University,RU,Russia
+396,"Stony Brook University, State University of New York",US,United States
+399,HSE University,RU,Russia
+400,Iowa State University,US,United States
+400,Masaryk University,CZ,Czech Republic
+400,Universidade Nova de Lisboa,PT,Portugal
+403,University of Granada,ES,Spain
+404,Istanbul Technical University,TR,Turkey
+404,"University of California, Riverside",US,United States
+404,University of the Philippines,PH,Philippines
+407,Auckland University of Technology (AUT),NZ,New Zealand
+407,University of Delhi,IN,India
+409,Colorado State University,US,United States
+410,Universidad de Santiago de Chile (USACH),CL,Chile
+410,University of Kansas,US,United States
+410,University of Southern Queensland ,AU,Australia
+413,Oxford Brookes University,UK,United Kingdom
+413,Royal Holloway University of London,UK,United Kingdom
+415,James Cook University,AU,Australia
+415,Moscow Institute of Physics and Technology (MIPT / Moscow Phystech),RU,Russia
+415,The American University in Cairo,EG,Egypt
+418,Tomsk State University,RU,Russia
+419,UNESP,BR,Brazil
+419,Washington State University,US,United States
+421,Graz University of Technology,AT,Austria
+421,Novosibirsk State University,RU,Russia
+421,Université de Liège,BE,Belgium
+421,Université de Strasbourg,FR,France
+421,University of Canberra ,AU,Australia
+426,University of Limerick,IE,Ireland
+427,Anna University,IN,India
+428,IE University,ES,Spain
+429,Singapore University of Technology and Design,SG,Singapore
+429,University of Trento,IT,Italy
+431,Koç University,TR,Turkey
+431,Murdoch University,AU,Australia
+431,National Taipei University of Technology,TW,Taiwan
+431,National Taiwan Normal University,TW,Taiwan
+431,University of Stirling,UK,United Kingdom
+436,Dublin City University,IE,Ireland
+436,Sejong University ,KR,South Korea
+436,Tampere University,FI,Finland
+436,University of Science and Technology Beijing,CN,China (Mainland)
+436,University of St.Gallen (HSG),CH,Switzerland
+440,Julius-Maximilians-Universität Würzburg,DE,Germany
+441, University of Dundee,UK,United Kingdom
+441,Université Laval,CA,Canada
+441,University of Utah,US,United States
+444,National and Kapodistrian University of Athens,GR,Greece
+444,University of Connecticut,US,United States
+446,Aston University,UK,United Kingdom
+446,Johannes Kepler University Linz,AT,Austria
+446,"The University of Tennessee, Knoxville",US,United States
+446,Toyota Technological Institute in Japan,JP,Japan
+446,University of Jyväskylä,FI,Finland
+451,Iran University of Science and Technology,IR,"Iran, Islamic Republic of"
+452,Central South University,CN,China (Mainland)
+452,Université Claude Bernard Lyon 1,FR,France
+454,Czech Technical University in Prague,CZ,Czech Republic
+454,Indian Institute of Technology Indore (IIT Indore),IN,India
+454,Southeast University,CN,China (Mainland)
+454,Sultan Qaboos University,OM,Oman
+454,Universität Mannheim,DE,Germany
+459,"Essex, University of",UK,United Kingdom
+460,Universität Potsdam,DE,Germany
+461,Florida State University,US,United States
+461,National Research Nuclear University MEPhI (Moscow Engineering Physics Institute),RU,Russia
+461,Universität Jena,DE,Germany
+464,Johannes Gutenberg Universität Mainz,DE,Germany
+465,Colorado School of Mines,US,United States
+465,Umea University,SE,Sweden
+465,University of Bordeaux,FR,France
+465,University of Sharjah,AE,United Arab Emirates
+469,Ben-Gurion University of The Negev,IL,Israel
+469,Illinois Institute of Technology,US,United States
+469,Università degli Studi di Pavia,IT,Italy
+472,Hiroshima University,JP,Japan
+473,Beihang University (former BUAA),CN,China (Mainland)
+473,Ural Federal University - UrFU,RU,Russia
+473,Vilnius University ,LT,Lithuania
+476,Kobe University,JP,Japan
+476,Universitat Politècnica de València,ES,Spain
+478,Universität Konstanz,DE,Germany
+479,Universität Leipzig,DE,Germany
+480,Missouri University of Science and Technology,US,United States
+481,Bangor University,UK,United Kingdom
+481,Hitotsubashi University,JP,Japan
+481,Leibniz University Hannover,DE,Germany
+481,Satbayev University,KZ,Kazakhstan
+481,University of Milano-Bicocca ,IT,Italy
+485,Universitat de Valencia,ES,Spain
+486,University of Electronic Science and Technology of China,CN,China (Mainland)
+486,University of Guelph,CA,Canada
+489,IPB University (a.k.a. Bogor Agricultural University),ID,Indonesia
+489,"University of Rome ""Tor Vergata""",IT,Italy
+491,Dalian University of Technology,CN,China (Mainland)
+491,University at Buffalo SUNY,US,United States
+491,University of Iowa,US,United States
+494,Chung-Ang University (CAU),KR,South Korea
+494,Hunan University ,CN,China (Mainland)
+494,Rensselaer Polytechnic Institute,US,United States
+494,Universidad de Sevilla,ES,Spain
+498,Ewha Womans University,KR,South Korea
+498,Ulster University,UK,United Kingdom
+498,University of Delaware,US,United States
+498,University of Jordan,JO,Jordan
+502,Bilkent University,TR,Turkey
+502,Jilin University,CN,China (Mainland)
+502,University of Portsmouth,UK,United Kingdom
+505,Macau University of Science and Technology,MO,Macau SAR
+505,National Sun Yat-sen University,TW,Taiwan
+505,Oregon State University,US,United States
+505,Università Cattolica del Sacro Cuore,IT,Italy
+509,Sogang University,KR,South Korea
+509,University of Bayreuth,DE,Germany
+511,East China Normal University,CN,China (Mainland)
+511,SOAS University of London ,UK,United Kingdom
+511,Université Paul Sabatier Toulouse III,FR,France
+514,Boğaziçi University,TR,Turkey
+514,Duy Tan University,VN,Vietnam
+514,Pontificia Universidad Católica Argentina,AR,Argentina
+514,Shanghai University,CN,China (Mainland)
+514,The University of Georgia,US,United States
+514,Universität Bremen,DE,Germany
+520,Kyungpook National University,KR,South Korea
+520,Universidad Austral,AR,Argentina
+520,University of Texas Dallas,US,United States
+523,Universidad de Zaragoza,ES,Spain
+523,University of Hull,UK,United Kingdom
+525,Universiti Teknologi Brunei,BN,Brunei
+526,MGIMO University,RU,Russia
+526,Sabanci University,TR,Turkey
+526,University of Madras,IN,India
+529,Edith Cowan University ,AU,Australia
+530,Aristotle University of Thessaloniki,GR,Greece
+530,Christian-Albrechts-University zu Kiel,DE,Germany
+530,Universidad de Palermo (UP),AR,Argentina
+530,University of Genoa,IT,Italy
+534,China Agricultural University ,CN,China (Mainland)
+534,Peter the Great St. Petersburg Polytechnic University,RU,Russia
+534,University of Crete,GR,Greece
+534,University of Salamanca,ES,Spain
+538,Universidad de Alcalá,ES,Spain
+538,Universiti Utara Malaysia (UUM),MY,Malaysia
+540,Lahore University of Management Sciences (LUMS),PK,Pakistan
+540,Universidad Nacional de La Plata (UNLP),AR,Argentina
+542,ITMO University,RU,Russia
+542,University Ulm,DE,Germany
+544,Universidad de Costa Rica,CR,Costa Rica
+545,Bar-Ilan University,IL,Israel
+545,City University of New York,US,United States
+545,Singapore Management University,SG,Singapore
+548,Lehigh University,US,United States
+548,Northumbria University at Newcastle,UK,United Kingdom
+548,University of Eastern Finland,FI,Finland
+551,Ajman University,AE,United Arab Emirates
+551,Canadian University Dubai,AE,United Arab Emirates
+551,Hasselt University ,BE,Belgium
+551,University of Nebraska - Lincoln,US,United States
+555,Universiti Teknologi MARA - UiTM,MY,Malaysia
+556,Florida International University,US,United States
+556,INTI International University,MY,Malaysia
+556,Politecnico di Bari,IT,Italy
+556,Renmin (People's) University of China,CN,China (Mainland)
+556,"University of Chemistry and Technology, Prague",CZ,Czech Republic
+561,Chongqing University,CN,China (Mainland)
+561,University of Plymouth,UK,United Kingdom
+563,Ateneo de Manila University,PH,Philippines
+563,Université de Fribourg,CH,Switzerland
+563,University of South Florida,US,United States
+567,Bond University,AU,Australia
+567,National Chengchi University,TW,Taiwan
+567,Universidad Adolfo Ibáñez,CL,Chile
+567,University of Huddersfield,UK,United Kingdom
+571,Chiang Mai University,TH,Thailand
+571,Coventry University,UK,United Kingdom
+571,Indian Institute of Technology (BHU) Varanasi,IN,India
+571,Warsaw University of Technology,PL,Poland
+575,HUFS - Hankuk (Korea) University of Foreign Studies ,KR,South Korea
+575,University of South Carolina,US,United States
+577,Lebanese University,LB,Lebanon
+577,Taipei Medical University (TMU),TW,Taiwan
+577,University of Tromsø The Arctic University of Norway,NO,Norway
+580,Abu Dhabi University,AE,United Arab Emirates
+580,University of Klagenfurt,AT,Austria
+582,Applied Science University - Bahrain,BH,Bahrain
+582,Universidad Católica Andres Bello,VE,Venezuela
+582,Universidad Pontificia Comillas,ES,Spain
+586,National Research Tomsk Polytechnic University,RU,Russia
+586,Sunway University,MY,Malaysia
+586,"University of Missouri, Columbia",US,United States
+590,Central Queensland University (CQUniversity Australia),AU,Australia
+590,Manchester Metropolitan University (MMU),UK,United Kingdom
+590,Prince Mohammad Bin Fahd university,SA,Saudi Arabia
+593,"Goldsmiths, University of London",UK,United Kingdom
+593,University of Central Florida,US,United States
+595,Imam Abdulrahman Bin Faisal University (IAU) (formerly UNIVERSITY OF DAMMAM),SA,Saudi Arabia
+595,Nottingham Trent University,UK,United Kingdom
+595,Pontifícia Universidade Católica do Rio de Janeiro,BR,Brazil
+595,Shenzhen University,CN,China (Mainland)
+595,Università Vita-Salute San Raffaele,IT,Italy
+600,Nanjing University of Science and Technology,CN,China (Mainland)
+600,Thammasat University,TH,Thailand
+600,Tulane University,US,United States
+600,Universität des Saarlandes,DE,Germany
+601-610,Abo Akademi University,FI,Finland
+601-610,American University in Dubai,AE,United Arab Emirates
+601-610,Charles Darwin University ,AU,Australia
+601-610,Drexel University,US,United States
+601-610,Jawaharlal Nehru University,IN,India
+601-610,"Kingston University, London",UK,United Kingdom
+601-610,Umm Al-Qura University ,SA,Saudi Arabia
+601-610,Universidad de Concepción,CL,Chile
+601-610,University of Szeged,HU,Hungary
+611-620,Al Ain University,AE,United Arab Emirates
+611-620,Auezov South Kazakhstan University (SKU),KZ,Kazakhstan
+611-620,Brno University of Technology,CZ,Czech Republic
+611-620,Martin-Luther-Universität Halle-Wittenberg,DE,Germany
+611-620,National Central University,TW,Taiwan
+611-620,Pusan National University,KR,South Korea
+611-620,Tokyo Medical and Dental University (TMDU),JP,Japan
+611-620,University of Minho,PT,Portugal
+621-630,Asia Pacific University of Technology and Innovation (APU),MY,Malaysia
+621-630,Chang Gung University,TW,Taiwan
+621-630,Institut Teknologi Sepuluh Nopember (ITS Surabaya),ID,Indonesia
+621-630,Management and Science University,MY,Malaysia
+621-630,Northwestern Polytechnical University,CN,China (Mainland)
+621-630,Stevens Institute of Technology,US,United States
+621-630,Universitat Ramon Llull,ES,Spain
+621-630,University of Kwazulu-Natal,ZA,South Africa
+621-630,University of Ljubljana,SI,Slovenia
+621-630,University of the Basque Country,ES,Spain
+621-630,Zhengzhou University,CN,China (Mainland)
+631-640,Ajou University ,KR,South Korea
+631-640,Boston College,US,United States
+631-640,Jinan University (China),CN,China (Mainland)
+631-640,Palacký University Olomouc,CZ,Czech Republic
+631-640,Ritsumeikan University,JP,Japan
+631-640,Saint Joseph University of Beirut (USJ) ,LB,Lebanon
+631-640,Universidad Central de Venezuela,VE,Venezuela
+631-640,Université de Lille,FR,France
+631-640,University of New Mexico,US,United States
+641-650,Far Eastern Federal University,RU,Russia
+641-650,Free University of Bozen-Bolzano,IT,Italy
+641-650,Kazakh National Agrarian University KazNAU,KZ,Kazakhstan
+641-650,"Lingnan University, Hong Kong",HK,Hong Kong SAR
+641-650,Memorial University of Newfoundland,CA,Canada
+641-650,New Jersey Institute of Technology (NJIT),US,United States
+641-650,Pakistan Institute of Engineering and Applied Sciences (PIEAS),PK,Pakistan
+641-650,The New School,US,United States
+641-650,Universidad de La Habana,CU,Cuba
+641-650,University of Bradford,UK,United Kingdom
+641-650,University of Houston,US,United States
+641-650,University of Modena and Reggio Emilia,IT,Italy
+641-650,University of Oklahoma,US,United States
+641-650,University of Windsor,CA,Canada
+651-660,COMSATS University Islamabad,PK,Pakistan
+651-660,Instituto Tecnológico Autónomo de México (ITAM),MX,Mexico
+651-660,Southern Cross University ,AU,Australia
+651-660,Tallinn University of Technology (TalTech),EE,Estonia
+651-660,Universidad de Montevideo (UM),UY,Uruguay
+651-660,University of Haifa,IL,Israel
+651-660,University of Hohenheim,DE,Germany
+661-670,Aberystwyth University,UK,United Kingdom
+661-670,Brandeis University,US,United States
+661-670,Ca' Foscari University of Venice ,IT,Italy
+661-670,Holy Spirit University of Kaslik ,LB,Lebanon
+661-670,Karl-Franzens-Universitaet Graz,AT,Austria
+661-670,Lebanese American University,LB,Lebanon
+661-670,Middlesex University,UK,United Kingdom
+661-670,National Chung Hsing University,TW,Taiwan
+661-670,Princess Nourah bint Abdulrahman University,SA,Saudi Arabia
+661-670,Tokyo University of Science,JP,Japan
+661-670,Universidad Panamericana (UP),MX,Mexico
+661-670,Università degli Studi di Perugia,IT,Italy
+661-670,Universitas Padjadjaran,ID,Indonesia
+661-670,Universitat Rovira i Virgili,ES,Spain
+671-680,American University of the Middle East,KW,Kuwait
+671-680,Carleton University,CA,Canada
+671-680,Dongguk University ,KR,South Korea
+671-680,University of Debrecen,HU,Hungary
+671-680,University of Greenwich,UK,United Kingdom
+671-680,University of Manitoba,CA,Canada
+681-690,Abai Kazakh National Pedagogical University,KZ,Kazakhstan
+681-690,Colegio de México,MX,Mexico
+681-690,De La Salle University,PH,Philippines
+681-690,East China University of Science and Technology,CN,China (Mainland)
+681-690,Paris Lodron University of Salzburg,AT,Austria
+681-690,Pontificia Universidad Católica de Valparaíso,CL,Chile
+681-690,Shiraz University,IR,"Iran, Islamic Republic of"
+681-690,Soochow University,CN,China (Mainland)
+681-690,Taras Shevchenko National University of Kyiv,UA,Ukraine
+681-690,The National University of Science and Technology MISIS,RU,Russia
+681-690,University of Kentucky,US,United States
+691-700,Indian Institute of Technology Hyderabad,IN,India
+691-700,Inha University,KR,South Korea
+691-700,Universidad Iberoamericana IBERO,MX,Mexico
+691-700,Universidade Federal de Minas Gerais      ,BR,Brazil
+691-700,Universidade Federal do Rio Grande Do Sul ,BR,Brazil
+691-700,University of Cincinnati,US,United States
+691-700,University of Dhaka,BD,Bangladesh
+691-700,University of Mons ,BE,Belgium
+691-700,University of Trieste,IT,Italy
+691-700,V. N. Karazin Kharkiv National University,UA,Ukraine
+701-710,Altai State University,RU,Russia
+701-710,Chiba University,JP,Japan
+701-710,Czech University of Life Sciences in Prague,CZ,Czech Republic
+701-710,Eötvös Loránd University,HU,Hungary
+701-710,Universidad de Antioquia,CO,Colombia
+701-710,Universidade de Santiago de Compostela,ES,Spain
+701-710,Wake Forest University,US,United States
+701-710,Zayed University,AE,United Arab Emirates
+711-720,Beirut Arab University ,LB,Lebanon
+711-720,China University of Petroleum,CN,China (Mainland)
+711-720,International Islamic University Malaysia (IIUM),MY,Malaysia
+711-720,Istanbul University,TR,Turkey
+711-720,Savitribai Phule Pune University,IN,India
+711-720,Universidad del Rosario,CO,Colombia
+711-720,Université de Rennes 1 (University of Rennes),FR,France
+711-720,"University of Maryland, Baltimore County",US,United States
+711-720,University of New Brunswick,CA,Canada
+711-720,University of Westminster,UK,United Kingdom
+711-720,Victoria University ,AU,Australia
+721-730,Ain Shams University ,EG,Egypt
+721-730,Beijing University of Chemical Technology,CN,China (Mainland)
+721-730,Jeonbuk National University,KR,South Korea
+721-730,Temple University,US,United States
+721-730,Ton Duc Thang University,VN,Vietnam
+721-730,Universita' Politecnica delle Marche,IT,Italy
+721-730,Université Côte d\'Azur,FR,France
+721-730,Université de Lorraine,FR,France
+721-730,University of Belgrade,RS,Serbia
+721-730,"University of Colorado, Denver ",US,United States
+721-730,University of Oregon,US,United States
+731-740,"Adam Mickiewicz University, Poznań",PL,Poland
+731-740,Alfaisal University,SA,Saudi Arabia
+731-740,Bournemouth University,UK,United Kingdom
+731-740,Indian Institute of Technology Bhubaneswar,IN,India
+731-740,Jordan University of Science & Technology,JO,Jordan
+731-740,"National Technical University of Ukraine ""Igor Sikorsky Kyiv Polytechnic Institute""",UA,Ukraine
+731-740,Universidad EAFIT,CO,Colombia
+731-740,Universidade Federal de São Paulo,BR,Brazil
+731-740,University of Siena,IT,Italy
+741-750,Budapest University of Technology and Economics,HU,Hungary
+741-750,Instituto Politécnico Nacional (IPN),MX,Mexico
+741-750,Jadavpur University,IN,India
+741-750,"Sofia University ""St. Kliment Ohridski""",BG,Bulgaria
+741-750,Swarthmore College,US,United States
+741-750,Universität Regensburg,DE,Germany
+741-750,"University of Agriculture, Faisalabad ",PK,Pakistan
+741-750,University of Bari,IT,Italy
+741-750,University of the Punjab,PK,Pakistan
+741-750,University of the West of England,UK,United Kingdom
+751-760,Ahlia University,BH,Bahrain
+751-760,ISCTE - Instituto Universitario de Lisboa,PT,Portugal
+751-760,Kasetsart University,TH,Thailand
+751-760,Liverpool John Moores University,UK,United Kingdom
+751-760,Riga Technical University,LV,Latvia
+751-760,Technische Universität Braunschweig,DE,Germany
+751-760,Universidad Externado de Colombia ,CO,Colombia
+751-760,Université du Québec,CA,Canada
+751-760,University of Mumbai,IN,India
+751-760,University of Ulsan ,KR,South Korea
+751-760,University of Zagreb,HR,Croatia
+751-760,Wayne State University,US,United States
+761-770,Hacettepe University ,TR,Turkey
+761-770,King Khalid University,SA,Saudi Arabia
+761-770,Philipps-Universität Marburg ,DE,Germany
+761-770,Universidad de Belgrano,AR,Argentina
+761-770,Universität Rostock,DE,Germany
+761-770,Universiti Tenaga Nasional (UNITEN),MY,Malaysia
+761-770,Virginia Commonwealth University,US,United States
+771-780,Chandigarh University,IN,India
+771-780,Comenius University Bratislava,SK,Slovakia
+771-780,Rutgers University–Newark,US,United States
+771-780,Sechenov University,RU,Russia
+771-780,Shoolini University of Biotechnology and Management Sciences,IN,India
+771-780,Universidad Anáhuac México,MX,Mexico
+771-780,Universidad ORT Uruguay,UY,Uruguay
+771-780,Universität Duisburg-Essen,DE,Germany
+771-780,Université de Nantes,FR,France
+771-780,University at Albany SUNY,US,United States
+771-780,University of Brighton,UK,United Kingdom
+781-790,University of Northern British Columbia,CA,Canada
+781-790,China University of Mining and Technology,CN,China (Mainland)
+781-790,Keele University ,UK,United Kingdom
+781-790,Khoja Akhmet Yassawi International Kazakh-Turkish University,KZ,Kazakhstan
+781-790,Nanjing Agricultural University,CN,China (Mainland)
+781-790,National Institute of Technology Tiruchirappalli,IN,India
+781-790,Syracuse University,US,United States
+781-790,The Catholic University of Korea ,KR,South Korea
+781-790,Universiti Malaysia Pahang,MY,Malaysia
+781-790,University of Alaska Fairbanks,US,United States
+791-800,American University,US,United States
+791-800,Clarkson University,US,United States
+791-800,Diponegoro University,ID,Indonesia
+791-800,Instituto Tecnológico de Buenos Aires (ITBA),AR,Argentina
+791-800,Lanzhou University,CN,China (Mainland)
+791-800,Plekhanov Russian University of Economics,RU,Russia
+791-800,Universidad de La Sabana,CO,Colombia
+791-800,University of Brescia,IT,Italy
+791-800,University of Engineering & Technology (UET) Lahore,PK,Pakistan
+791-800,University of Patras,GR,Greece
+801-850,Al-Ahliyya Amman University,JO,Jordan
+801-850,Almaty Technological University,KZ,Kazakhstan
+801-850,Auburn University,US,United States
+801-850,Australian Catholic University,AU,Australia
+801-850,Babes-Bolyai University,RO,Romania
+801-850,Bangladesh University of Engineering and Technology,BD,Bangladesh
+801-850,Beijing University of Technology,CN,China (Mainland)
+801-850,Belarusian National Technical University (BNTU),BY,Belarus
+801-850,Charles Sturt University ,AU,Australia
+801-850,China University of Geosciences,CN,China (Mainland)
+801-850,Clark University,US,United States
+801-850,De Montfort University,UK,United Kingdom
+801-850,Edinburgh Napier University,UK,United Kingdom
+801-850,Immanuel Kant Baltic Federal University,RU,Russia
+801-850,Ivane Javakhishvili Tbilisi State University,GE,Georgia
+801-850,Jouf University,SA,Saudi Arabia
+801-850,Kaunas University of Technology,LT,Lithuania
+801-850,Konkuk University ,KR,South Korea
+801-850,Louisiana State University,US,United States
+801-850,Maynooth University,IE,Ireland
+801-850,Nagasaki University,JP,Japan
+801-850,Nanjing University of Aeronautics and Astronautics,CN,China (Mainland)
+801-850,North-West University,ZA,South Africa
+801-850,Poznan University of Life Sciences,PL,Poland
+801-850,Ritsumeikan Asia Pacific University,JP,Japan
+801-850,Texas Tech University,US,United States
+801-850,Tokyo University of Agriculture and Technology ,JP,Japan
+801-850,Universidad de la República (Udelar),UY,Uruguay
+801-850,Universidad de San Andrés - UdeSA,AR,Argentina
+801-850,Universidad Pontificia Bolivariana ,CO,Colombia
+801-850,Universidad San Francisco de Quito (USFQ),EC,Ecuador
+801-850,Universidad Técnica Federico Santa María (USM),CL,Chile
+801-850,Universidade de Brasília,BR,Brazil
+801-850,Universidade Federal de Santa Catarina ,BR,Brazil
+801-850,Universitas Brawijaya ,ID,Indonesia
+801-850,Université de Sherbrooke,CA,Canada
+801-850,Universiti Tunku Abdul Rahman (UTAR),MY,Malaysia
+801-850,University Duesseldorf,DE,Germany
+801-850,University of Alicante,ES,Spain
+801-850,University of Balamand,LB,Lebanon
+801-850,University of Calcutta,IN,India
+801-850,University of Dubai,AE,United Arab Emirates
+801-850,University of Hyderabad,IN,India
+801-850,University of Latvia,LV,Latvia
+801-850,University of Massachusetts Boston,US,United States
+801-850,University of Pecs,HU,Hungary
+801-850,University of Salerno,IT,Italy
+801-850,University of Santo Tomas,PH,Philippines
+801-850,Verona University,IT,Italy
+801-850,Vilnius Gediminas Technical University,LT,Lithuania
+801-850,Vytautas Magnus University,LT,Lithuania
+801-850,Yokohama City University,JP,Japan
+801-850,Karaganda State Technical University,KZ,Kazakhstan
+851-900,Addis Ababa University,ET,Ethiopia
+851-900,Beijing University of Posts and Telecommunications,CN,China (Mainland)
+851-900,Catania University,IT,Italy
+851-900,Chonnam National University,KR,South Korea
+851-900,Chungnam National University,KR,South Korea
+851-900,Clemson University,US,United States
+851-900,CY Cergy Paris University,FR,France
+851-900,Gdańsk University of Technology,PL,Poland
+851-900,Georgia State University,US,United States
+851-900,Gulf University for Science and Technology,KW,Kuwait
+851-900,Huazhong Agricultural University,CN,China (Mainland)
+851-900,Kanazawa University,JP,Japan
+851-900,Kansas State University ,US,United States
+851-900,Karaganda Buketov University,KZ,Kazakhstan
+851-900,King Faisal University,SA,Saudi Arabia
+851-900,Kuwait University,KW,Kuwait
+851-900,Kyrgyz-Turkish Manas University,KG,Kyrgyzstan
+851-900,London South Bank University,UK,United Kingdom
+851-900,Michigan Technological University,US,United States
+851-900,National Research Saratov State University,RU,Russia
+851-900,Niigata University,JP,Japan
+851-900,North South University,BD,Bangladesh
+851-900,Oklahoma State University ,US,United States
+851-900,Pavol Jozef Šafárik University in Košice,SK,Slovakia
+851-900,"Queen Margaret University , Edinburgh",UK,United Kingdom
+851-900,Ryerson University,CA,Canada
+851-900,Southern Federal University,RU,Russia
+851-900,Technological University Dublin,IE,Ireland
+851-900,TU Dortmund University,DE,Germany
+851-900,Universidad Católica del Uruguay (UCU),UY,Uruguay
+851-900,"Universidad Central ""Marta Abreu"" de Las Villas",CU,Cuba
+851-900,Universidad de Guadalajara (UDG),MX,Mexico
+851-900,Universidad Torcuato Di Tella,AR,Argentina
+851-900,Universita' degli Studi di Ferrara,IT,Italy
+851-900,University of Bucharest,RO,Romania
+851-900,University of East London,UK,United Kingdom
+851-900,University of Hertfordshire,UK,United Kingdom
+851-900,University of Lincoln,UK,United Kingdom
+851-900,University of Malta,MT,Malta
+851-900,University of Maribor,SI,Slovenia
+851-900,University of Messina (UniME),IT,Italy
+851-900,University of Palermo,IT,Italy
+851-900,University of Parma,IT,Italy
+851-900,University of Salford,UK,United Kingdom
+851-900,University of South Africa,ZA,South Africa
+851-900,University Paris 2 Panthéon-Assas,FR,France
+851-900,Vellore Institute of Technology (VIT),IN,India
+851-900,Wesleyan University,US,United States
+851-900,Worcester Polytechnic Institute,US,United States
+851-900,Wuhan University of Technology,CN,China (Mainland)
+901-950,AGH University of Science and Technology,PL,Poland
+901-950,Alexandria University ,EG,Egypt
+901-950,Ankara Üniversitesi,TR,Turkey
+901-950,Asia University Taiwan,TW,Taiwan
+901-950,Athens University of Economics and Business,GR,Greece
+901-950,Beijing Jiaotong University,CN,China (Mainland)
+901-950,College of William and Mary,US,United States
+901-950,D. Serikbayev East Kazakhstan state technical university,KZ,Kazakhstan
+901-950,Donghua University,CN,China (Mainland)
+901-950,Hallym University ,KR,South Korea
+901-950,Kumamoto University,JP,Japan
+901-950,London Metropolitan University,UK,United Kingdom
+901-950,Loyola University Chicago,US,United States
+901-950,Mendel University in Brno,CZ,Czech Republic
+901-950,National Chung Cheng University,TW,Taiwan
+901-950,"National Technical University ""Kharkiv Polytechnic Institute""",UA,Ukraine
+901-950,Nicolaus Copernicus University ,PL,Poland
+901-950,Northern Borders University,SA,Saudi Arabia
+901-950,Notre Dame University-Louaize NDU,LB,Lebanon
+901-950,Ocean University of China,CN,China (Mainland)
+901-950,Okayama University,JP,Japan
+901-950,Pontificia Universidad Católica del Ecuador (PUCE),EC,Ecuador
+901-950,Prince of Songkla University,TH,Thailand
+901-950,Princess Sumaya University for Technology,JO,Jordan
+901-950,Qassim University,SA,Saudi Arabia
+901-950,Rhodes University ,ZA,South Africa
+901-950,Riga Stradins University,LV,Latvia
+901-950,Robert Gordon University,UK,United Kingdom
+901-950,S.D. Asfendiyarov Kazakh National Medical University,KZ,Kazakhstan
+901-950,Samara National Research University (Samara University),RU,Russia
+901-950,Sophia University ,JP,Japan
+901-950,St. Louis University,US,United States
+901-950,Sungshin Women's University,KR,South Korea
+901-950,Universidad Autónoma Metropolitana (UAM),MX,Mexico
+901-950,Universidad ICESI,CO,Colombia
+901-950,Universidad Nacional Mayor de San Marcos,PE,Peru
+901-950,Universidade Católica Portuguesa - UCP,PT,Portugal
+901-950,Universidade de Vigo,ES,Spain
+901-950,Università degli studi Roma Tre,IT,Italy
+901-950,"University of Alabama, Birmingham",US,United States
+901-950,University of Central Lancashire,UK,United Kingdom
+901-950,University of Denver,US,United States
+901-950,University of Murcia,ES,Spain
+901-950,University of Petroleum and Energy Studies (UPES),IN,India
+901-950,University of Vermont,US,United States
+901-950,University of Wroclaw,PL,Poland
+901-950,West Virginia University,US,United States
+901-950,Wroclaw University of Science and Technology (WRUST),PL,Poland
+951-1000,Bielefeld University,DE,Germany
+951-1000,"Birla Institute of Technology and Science, Pilani",IN,India
+951-1000,George Mason University,US,United States
+951-1000,Gifu University,JP,Japan
+951-1000,Gunma University,JP,Japan
+951-1000,Indiana University–Purdue University Indianapolis,US,United States
+951-1000,Islamic University of Madinah,SA,Saudi Arabia
+951-1000,Jamia Millia Islamia,IN,India
+951-1000,Khon Kaen University,TH,Thailand
+951-1000,King Mongkut's University of Technology Thonburi ,TH,Thailand
+951-1000,Lviv Polytechnic National University,UA,Ukraine
+951-1000,Makerere University,UG,Uganda
+951-1000,"Manipal Academy of Higher Education, Manipal, Karnataka, India",IN,India
+951-1000,NJSC KIMEP University,KZ,Kazakhstan
+951-1000,Northwest Agriculture and Forestry University,CN,China (Mainland)
+951-1000,O.P. Jindal Global University,IN,India
+951-1000,Saint Petersburg Electrotechnical University ETU-LETI,RU,Russia
+951-1000,Shahid Beheshti University (SBU),IR,"Iran, Islamic Republic of"
+951-1000,South Ural State University (National Research University),RU,Russia
+951-1000,Sumy State University,UA,Ukraine
+951-1000,Tecnológico de Costa Rica -TEC,CR,Costa Rica
+951-1000,Thapar Institute of Engineering & Technology,IN,India
+951-1000,The University of Alabama,US,United States
+951-1000,Tokyo Metropolitan University,JP,Japan
+951-1000,Universidad de Castilla-La Mancha,ES,Spain
+951-1000,Universidad de las Américas Puebla (UDLAP),MX,Mexico
+951-1000,Universidad de los Andes - Chile,CL,Chile
+951-1000,Universidad de Valladolid,ES,Spain
+951-1000,Universidad Diego Portales (UDP),CL,Chile
+951-1000,Universidad Nacional de Córdoba - UNC,AR,Argentina
+951-1000,Universidad Nacional de Ingeniería Peru,PE,Peru
+951-1000,Universidad Nacional de Rosario (UNR),AR,Argentina
+951-1000,Universidad Peruana Cayetano Heredia (UPCH),PE,Peru
+951-1000,Universidad Rey Juan Carlos,ES,Spain
+951-1000,Universidad Simón Bolívar (USB),VE,Venezuela
+951-1000,Universidad Tecnológica de Panamá (UTP),PA,Panama
+951-1000,Université de Tunis El Manar,TN,Tunisia
+951-1000,Université Toulouse 1 Capitole,FR,France
+951-1000,Universiti Pendidikan Sultan Idris (UPSI),MY,Malaysia
+951-1000,University of Baghdad,IQ,Iraq
+951-1000,University of Bahrain,BH,Bahrain
+951-1000,University of Calabria,IT,Italy
+951-1000,UNIVERSITY OF GDANSK,PL,Poland
+951-1000,University of Ghana,GH,Ghana
+951-1000,University of Lodz,PL,Poland
+951-1000,University of New England Australia,AU,Australia
+951-1000,University of Peshawar,PK,Pakistan
+951-1000,University of Seoul ,KR,South Korea
+951-1000,University of the Western Cape,ZA,South Africa
+951-1000,Viet Nam National University Ho Chi Minh City (VNU-HCM),VN,Vietnam
+951-1000,"Vietnam National University, Hanoi ",VN,Vietnam
+951-1000,Yeungnam University ,KR,South Korea
+951-1000,Yildiz Technical University,TR,Turkey
+951-1000,Yokohama National University,JP,Japan
+1001-1200,Università del Salento,IT,Italy
+1001-1200,University of Ioannina,GR,Greece
+1001-1200,Vancouver Island University,CA,Canada
+1001-1200,Al Quds University The Arab University in Jerusalem,PS,"Palestinian Territory, Occupied"
+1001-1200,Aligarh Muslim University,IN,India
+1001-1200,Amity University,IN,India
+1001-1200,Amrita Vishwa Vidyapeetham,IN,India
+1001-1200,An-Najah National University,PS,"Palestinian Territory, Occupied"
+1001-1200,"Arab Academy for Science, Technology and Maritime Transport",EG,Egypt
+1001-1200,Assiut University ,EG,Egypt
+1001-1200,Azerbaijan State University of Economics,AZ,Azerbaijan
+1001-1200,Baku State University,AZ,Azerbaijan
+1001-1200,Banaras Hindu University,IN,India
+1001-1200,Baylor University,US,United States
+1001-1200,Beijing Foreign Studies University,CN,China (Mainland)
+1001-1200,Beijing University of Chinese Medicine,CN,China (Mainland)
+1001-1200,Bina Nusantara University (BINUS),ID,Indonesia
+1001-1200,Binghamton University SUNY,US,United States
+1001-1200,Birmingham City University ,UK,United Kingdom
+1001-1200,BRAC University,BD,Bangladesh
+1001-1200,Brigham Young University,US,United States
+1001-1200,Canterbury Christ Church University,UK,United Kingdom
+1001-1200,Chang Jung Christian University,TW,Taiwan
+1001-1200,Chung Yuan Christian University,TW,Taiwan
+1001-1200,Chungbuk National University,KR,South Korea
+1001-1200,Corvinus University of Budapest,HU,Hungary
+1001-1200,Cracow University of Technology (Politechnika Krakowska),PL,Poland
+1001-1200,Dankook University ,KR,South Korea
+1001-1200,Doshisha University,JP,Japan
+1001-1200,EGE UNIVERSITY,TR,Turkey
+1001-1200,Escuela Politécnica Nacional,EC,Ecuador
+1001-1200,Escuela Superior Politécnica del Litoral (ESPOL),EC,Ecuador
+1001-1200,Ferdowsi University of Mashhad,IR,"Iran, Islamic Republic of"
+1001-1200,Financial University under the Government of the Russian Federation,RU,Russia
+1001-1200,Fordham University ,US,United States
+1001-1200,Fundación CEU San Pablo,ES,Spain
+1001-1200,Future University in Egypt,EG,Egypt
+1001-1200,Gazi Üniversitesi,TR,Turkey
+1001-1200,German Jordanian University,JO,Jordan
+1001-1200,Glasgow Caledonian University,UK,United Kingdom
+1001-1200,Harbin Engineering University,CN,China (Mainland)
+1001-1200,Harper Adams University,UK,United Kingdom
+1001-1200,Howard University,US,United States
+1001-1200,Hungarian University of Agriculture and Life Sciences,HU,Hungary
+1001-1200,Imam Mohammad Ibn Saud Islamic University – IMSIU,SA,Saudi Arabia
+1001-1200,Instituto Tecnológico de Santo Domingo (INTEC),DO,Dominican Republic
+1001-1200,International Christian University,JP,Japan
+1001-1200,"ITESO, Universidad Jesuita de Guadalajara",MX,Mexico
+1001-1200,Jiangnan University,CN,China (Mainland)
+1001-1200,Kagoshima University,JP,Japan
+1001-1200,Kangwon National University ,KR,South Korea
+1001-1200,Kazakh Ablai Khan University of International Relations and World Languages,KZ,Kazakhstan
+1001-1200,Kazakh-British Technical University,KZ,Kazakhstan
+1001-1200,Kazan National Research Technological University,RU,Russia
+1001-1200,Kent State University,US,United States
+1001-1200,Kookmin University ,KR,South Korea
+1001-1200,Kyoto Institute of Technology,JP,Japan
+1001-1200,Kyushu Institute of Technology ,JP,Japan
+1001-1200,Leeds Beckett University,UK,United Kingdom
+1001-1200,Lobachevsky University,RU,Russia
+1001-1200,Lodz University of Technology,PL,Poland
+1001-1200,Mansoura University,EG,Egypt
+1001-1200,Meiji University,JP,Japan
+1001-1200,Mississippi State University,US,United States
+1001-1200,Multimedia University (MMU),MY,Malaysia
+1001-1200,Mustansiriyah University,IQ,Iraq
+1001-1200,Mutah University,JO,Jordan
+1001-1200,Mykolas Romeris University,LT,Lithuania
+1001-1200,Nanjing Normal University,CN,China (Mainland)
+1001-1200,National University of Kyiv-Mohyla Academy (NaUKMA),UA,Ukraine
+1001-1200,Northern Arizona University,US,United States
+1001-1200,Northwest University (China),CN,China (Mainland)
+1001-1200,Novosibirsk State Technical University,RU,Russia
+1001-1200,Odessa I.I. Mechnikov National University,UA,Ukraine
+1001-1200,Ohio University,US,United States
+1001-1200,Panjab University,IN,India
+1001-1200,Paul Valéry University Montpellier,FR,France
+1001-1200,Pontifícia Universidade Católica de São Paulo,BR,Brazil
+1001-1200,Poznań University of Technology,PL,Poland
+1001-1200,Rochester Institute of Technology (RIT),US,United States
+1001-1200,Russian Presidential Academy of National Economy and Public Administration,RU,Russia
+1001-1200,Saint-Petersburg Mining University,RU,Russia
+1001-1200,San Diego State University,US,United States
+1001-1200,Sathyabama Institute of Science and Technology (deemed to be university),IN,India
+1001-1200,Seoul National University of Science and Technology,KR,South Korea
+1001-1200,Shanghai International Studies University,CN,China (Mainland)
+1001-1200,Sheffield Hallam University,UK,United Kingdom
+1001-1200,Shinshu University ,JP,Japan
+1001-1200,"Siberian Federal University, SibFU",RU,Russia
+1001-1200,Silesian University of Technology,PL,Poland
+1001-1200,Slovak University of Technology in Bratislava,SK,Slovakia
+1001-1200,Soonchunhyang University,KR,South Korea
+1001-1200,Southern Methodist University,US,United States
+1001-1200,Southwest University,CN,China (Mainland)
+1001-1200,Széchenyi István University,HU,Hungary
+1001-1200,Taibah University,SA,Saudi Arabia
+1001-1200,Tallinn University ,EE,Estonia
+1001-1200,Technical University of Kosice,SK,Slovakia
+1001-1200,Technical University of Liberec,CZ,Czech Republic
+1001-1200,Telkom University,ID,Indonesia
+1001-1200,The University of Lahore,PK,Pakistan
+1001-1200,The University of Northampton,UK,United Kingdom
+1001-1200,The University of Texas at Arlington,US,United States
+1001-1200,Tokai University,JP,Japan
+1001-1200,Tokushima University,JP,Japan
+1001-1200,Tomas Bata University in Zlin,CZ,Czech Republic
+1001-1200,Ufa State Aviation Technical University ,RU,Russia
+1001-1200,Universidad Andrés Bello,CL,Chile
+1001-1200,Universidad Austral de Chile,CL,Chile
+1001-1200,Universidad Autónoma Chapingo,MX,Mexico
+1001-1200,Universidad Autónoma de Guadalajara (UAG),MX,Mexico
+1001-1200,Universidad Autónoma de Nuevo León,MX,Mexico
+1001-1200,Universidad Autónoma del Estado de Hidalgo (UAEH),MX,Mexico
+1001-1200,Universidad Autónoma del Estado de México (UAEMex),MX,Mexico
+1001-1200,Universidad de Córdoba - España,ES,Spain
+1001-1200,Universidad de León,ES,Spain
+1001-1200,Universidad de Lima,PE,Peru
+1001-1200,Universidad de Los Andes - (ULA) Mérida,VE,Venezuela
+1001-1200,Universidad de Monterrey (UDEM),MX,Mexico
+1001-1200,Universidad de Oriente Santiago de Cuba,CU,Cuba
+1001-1200,Universidad de Oviedo,ES,Spain
+1001-1200,Universidad de Puerto Rico,PR,Puerto Rico
+1001-1200,Universidad de Talca,CL,Chile
+1001-1200,Universidad del Norte ,CO,Colombia
+1001-1200,Universidad del Pacífico,PE,Peru
+1001-1200,Universidad del Valle,CO,Colombia
+1001-1200,Universidad Industrial de Santander - UIS,CO,Colombia
+1001-1200,Universidad La Salle (ULSA),MX,Mexico
+1001-1200,Universidad Metropolitana,VE,Venezuela
+1001-1200,Universidad Nacional de Cuyo,AR,Argentina
+1001-1200,Universidad Nacional de la Asunción,PY,Paraguay
+1001-1200,Universidad Nacional de San Luis,AR,Argentina
+1001-1200,Universidad Nacional del Centro de la Provincia de Buenos Aires (UNICEN),AR,Argentina
+1001-1200,"Universidad Nacional, Costa Rica",CR,Costa Rica
+1001-1200,Universidad Peruana de Ciencias Aplicadas,PE,Peru
+1001-1200,Universidad Tecnológica Nacional (UTN),AR,Argentina
+1001-1200,Universidade da Coruña ,ES,Spain
+1001-1200,Universidade Federal de Pernambuco (UFPE) ,BR,Brazil
+1001-1200,Universidade Federal de São Carlos (UFSCar),BR,Brazil
+1001-1200,Universidade Federal do Paraná - UFPR,BR,Brazil
+1001-1200,"Universita' degli Studi ""G. d'Annunzio"" Chieti Pescara",IT,Italy
+1001-1200,Università degli Studi della Tuscia (University of Tuscia),IT,Italy
+1001-1200,Università degli Studi di Udine,IT,Italy
+1001-1200,Universitas Hasanuddin,ID,Indonesia
+1001-1200,Universitas Sebelas Maret,ID,Indonesia
+1001-1200,Universitat de Lleida,ES,Spain
+1001-1200,Universität Siegen,DE,Germany
+1001-1200,Université de Caen Normandie,FR,France
+1001-1200,Université de Poitiers,FR,France
+1001-1200,Université de Sfax,TN,Tunisia
+1001-1200,Université de Sousse,TN,Tunisia
+1001-1200,Université de Toulouse II-Le Mirail,FR,France
+1001-1200,Université Lumière Lyon 2,FR,France
+1001-1200,Universiti Kuala Lumpur (UniKL),MY,Malaysia
+1001-1200,Universiti Malaysia Perlis,MY,Malaysia
+1001-1200,Universiti Malaysia Sabah (UMS),MY,Malaysia
+1001-1200,Universiti Malaysia Sarawak (UNIMAS),MY,Malaysia
+1001-1200,Universiti Malaysia Terengganu (UMT),MY,Malaysia
+1001-1200,Universiti Tun Hussein Onn University of Malaysia (UTHM),MY,Malaysia
+1001-1200,University of Arkansas Fayetteville ,US,United States
+1001-1200,University of Colombo,LK,Sri Lanka
+1001-1200,University of Derby,UK,United Kingdom
+1001-1200,University of Deusto,ES,Spain
+1001-1200,University of Hradec Kralove,CZ,Czech Republic
+1001-1200,University of Idaho,US,United States
+1001-1200,University of Karachi,PK,Pakistan
+1001-1200,University of Louisville,US,United States
+1001-1200,University of Mississippi,US,United States
+1001-1200,"University of Missouri, Kansas City",US,United States
+1001-1200,University of Nairobi,KE,Kenya
+1001-1200,University of Naples Parthenope,IT,Italy
+1001-1200,University of New Hampshire,US,United States
+1001-1200,University of North Carolina at Charlotte,US,United States
+1001-1200,University of North Texas,US,United States
+1001-1200,University of Novi Sad,RS,Serbia
+1001-1200,University of Pardubice,CZ,Czech Republic
+1001-1200,University of Primorska,SI,Slovenia
+1001-1200,University of Regina,CA,Canada
+1001-1200,University of Rhode Island ,US,United States
+1001-1200,University of San Francisco,US,United States
+1001-1200,University of South Bohemia,CZ,Czech Republic
+1001-1200,University of Texas at San Antonio,US,United States
+1001-1200,University of Texas El Paso ,US,United States
+1001-1200,University of the Free State,ZA,South Africa
+1001-1200,University of the Sunshine Coast ,AU,Australia
+1001-1200,University of Toledo,US,United States
+1001-1200,University of Tulsa,US,United States
+1001-1200,University of Tyumen,RU,Russia
+1001-1200,University of Wisconsin Milwaukee ,US,United States
+1001-1200,University of Wolverhampton,UK,United Kingdom
+1001-1200,University of Wyoming,US,United States
+1001-1200,University of Žilina,SK,Slovakia
+1001-1200,Utah State University ,US,United States
+1001-1200,VSB - Technical University of Ostrava,CZ,Czech Republic
+1001-1200,Warsaw University of Life Sciences – SGGW (WULS-SGGW),PL,Poland
+1001-1200,Western Michigan University,US,United States
+1001-1200,Xi'an Jiaotong Liverpool University,CN,China (Mainland)
+1001-1200,Yamaguchi University ,JP,Japan
+1001-1200,Yarmouk University,JO,Jordan
+1001-1200,Yerevan State University,AM,Armenia
+1201-1400,Lucian Blaga University of Sibiu,RO,Romania
+1201-1400, Don State Technical University,RU,Russia
+1201-1400,Al-Azhar University,EG,Egypt
+1201-1400,Alexandru Ioan Cuza University,RO,Romania
+1201-1400,Anadolu University,TR,Turkey
+1201-1400,Aoyama Gakuin University,JP,Japan
+1201-1400,Atma Jaya Catholic University Jakarta,ID,Indonesia
+1201-1400,Azerbaijan State Oil and Industry University,AZ,Azerbaijan
+1201-1400,Bahauddin Zakariya University ,PK,Pakistan
+1201-1400,Belarusian State University of Informatics and Radioelectronics,BY,Belarus
+1201-1400,Benemérita Universidad Autónoma de Puebla,MX,Mexico
+1201-1400,Birzeit university,PS,"Palestinian Territory, Occupied"
+1201-1400,British University in Egypt,EG,Egypt
+1201-1400,Brock University,CA,Canada
+1201-1400,California Polytechnic State University,US,United States
+1201-1400,Católica de Córdoba,AR,Argentina
+1201-1400,Central Michigan University,US,United States
+1201-1400,Chaoyang University of Technology,TW,Taiwan
+1201-1400,China University of Political Science and Law,CN,China (Mainland)
+1201-1400,Chitkara University,IN,India
+1201-1400,Chittagong University of Engineering and Technology,BD,Bangladesh
+1201-1400,Cleveland State University,US,United States
+1201-1400,CUNY The City College of New York,US,United States
+1201-1400,Daffodil International University,BD,Bangladesh
+1201-1400,Damascus University,SY,Syrian Arab Republic
+1201-1400,Dokuz Eylül Üniversitesi,TR,Turkey
+1201-1400,East West University,BD,Bangladesh
+1201-1400,Erciyes Üniversitesi,TR,Turkey
+1201-1400,Feng Chia University,TW,Taiwan
+1201-1400,Florida Atlantic University - Boca Raton,US,United States
+1201-1400,Fu Jen Catholic University,TW,Taiwan
+1201-1400,Fundación Universidad De Bogotá-Jorge Tadeo Lozano,CO,Colombia
+1201-1400,Gebze Yüksek Teknoloji Enstitüsü (GYTE),TR,Turkey
+1201-1400,German University in Cairo,EG,Egypt
+1201-1400,Hanoi University of Science and Technology,VN,Vietnam
+1201-1400,Helwan University ,EG,Egypt
+1201-1400,Hohai University,CN,China (Mainland)
+1201-1400,Hongik University ,KR,South Korea
+1201-1400,Indiana State University,US,United States
+1201-1400,International Islamic University Islamabad (IIU),PK,Pakistan
+1201-1400,Istanbul Aydin University  ,TR,Turkey
+1201-1400,Istanbul Bilgi Üniversitesi,TR,Turkey
+1201-1400,Ivan Franko National University of Lviv,UA,Ukraine
+1201-1400,Izmir Institute of Technology (IZTECH),TR,Turkey
+1201-1400,Jahangirnagar University,BD,Bangladesh
+1201-1400,Jamia Hamdard,IN,India
+1201-1400,Jeju National University ,KR,South Korea
+1201-1400,Kenyatta University,KE,Kenya
+1201-1400,Kharkiv National University of Radio Electronics ,UA,Ukraine
+1201-1400,Khulna University of Engineering and Technology,BD,Bangladesh
+1201-1400,Kindai University (Kinki University),JP,Japan
+1201-1400,King Mongkut\'s Institute of Technology Ladkrabang,TH,Thailand
+1201-1400,King Mongkut's University of Technology North Bangkok,TH,Thailand
+1201-1400,Korkyt Ata Kyzylorda University,KZ,Kazakhstan
+1201-1400,Kwansei Gakuin University,JP,Japan
+1201-1400,M.Kh. Dulaty Taraz Regional University,KZ,Kazakhstan
+1201-1400,Marmara University,TR,Turkey
+1201-1400,Marquette University,US,United States
+1201-1400,Mendeleev University of Chemical Technology,RU,Russia
+1201-1400,Miami University,US,United States
+1201-1400,Moscow Pedagogical State University,RU,Russia
+1201-1400,Nagoya Institute of Technology (NIT),JP,Japan
+1201-1400,Naresuan University,TH,Thailand
+1201-1400,National Dong Hwa University,TW,Taiwan
+1201-1400,National Research University Moscow Power Engineering Institute (MPEI),RU,Russia
+1201-1400,National Taipei University,TW,Taiwan
+1201-1400,National Taiwan Ocean University,TW,Taiwan
+1201-1400,National University of Life and Environmental Sciences of Ukraine,UA,Ukraine
+1201-1400,"National University of Modern Languages (NUML), Islamabad",PK,Pakistan
+1201-1400,Norwegian University of Life Sciences (UMB),NO,Norway
+1201-1400,Nova Southeastern University,US,United States
+1201-1400,Óbuda University,HU,Hungary
+1201-1400,OSMANIA UNIVERSITY,IN,India
+1201-1400,Perm State National Research University,RU,Russia
+1201-1400,Pondicherry University,IN,India
+1201-1400,Pontificia Universidad Catolica Madre y Maestra,DO,Dominican Republic
+1201-1400,Pontifícia Universidade Católica do Rio Grande do Sul (PUCRS),BR,Brazil
+1201-1400,Portland State University,US,United States
+1201-1400,Pukyong National University ,KR,South Korea
+1201-1400,Rikkyo University,JP,Japan
+1201-1400,Russian State Agrarian University - Moscow Timiryazev Agricultural Academy,RU,Russia
+1201-1400,Russian State University for the Humanities ,RU,Russia
+1201-1400,"Rutgers, The State University of New Jersey, Camden",US,United States
+1201-1400,Saitama University,JP,Japan
+1201-1400,Saken Seifullin Kazakh Agrotechnical University,KZ,Kazakhstan
+1201-1400,San Francisco State University,US,United States
+1201-1400,Seattle University,US,United States
+1201-1400,Shanghai Normal University,CN,China (Mainland)
+1201-1400,Shanghai University of Finance and Economics,CN,China (Mainland)
+1201-1400,Shibaura Institute of Technology,JP,Japan
+1201-1400,Siksha 'O' Anusandhan (Deemed to be University),IN,India
+1201-1400,Silpakorn University,TH,Thailand
+1201-1400,Sookmyung Women's University ,KR,South Korea
+1201-1400,Soongsil University,KR,South Korea
+1201-1400,SRM INSTITUTE OF SCIENCE AND TECHNOLOGY,IN,India
+1201-1400,Stefan cel Mare University of Suceava,RO,Romania
+1201-1400,Suez Canal University,EG,Egypt
+1201-1400,Suleyman Demirel University,TR,Turkey
+1201-1400,"Suleyman Demirel University, Kazakhstan",KZ,Kazakhstan
+1201-1400,Suranaree University of Technology ,TH,Thailand
+1201-1400,Tamkang University,TW,Taiwan
+1201-1400,Tanta University ,EG,Egypt
+1201-1400,Technical University of Cluj-Napoca,RO,Romania
+1201-1400,Technical University of Lublin,PL,Poland
+1201-1400,"The ""Gheorghe Asachi"" Technical University of Iasi",RO,Romania
+1201-1400,The Hashemite University,JO,Jordan
+1201-1400,The Herzen State Pedagogical University of Russia,RU,Russia
+1201-1400,The Josip Juraj Strossmayer University of Osijek,HR,Croatia
+1201-1400,"The National Research University ""Belgorod State University""",RU,Russia
+1201-1400,Toraighyrov University,KZ,Kazakhstan
+1201-1400,Transilvania University of Brasov,RO,Romania
+1201-1400,Tunghai University,TW,Taiwan
+1201-1400,United International University,BD,Bangladesh
+1201-1400,Universidad Alberto Hurtado,CL,Chile
+1201-1400,Universidad Autónoma de Aguascalientes,MX,Mexico
+1201-1400,Universidad Autónoma de Baja California,MX,Mexico
+1201-1400,Universidad Bernardo O'Higgins,CL,Chile
+1201-1400,Universidad Católica de Temuco,CL,Chile
+1201-1400,Universidad Católica del Norte,CL,Chile
+1201-1400,Universidad Central del Ecuador,EC,Ecuador
+1201-1400,Universidad de Carabobo,VE,Venezuela
+1201-1400,Universidad de Cartagena,CO,Colombia
+1201-1400,Universidad de Córdoba - Colombia,CO,Colombia
+1201-1400,Universidad de Guanajuato,MX,Mexico
+1201-1400,Universidad de La Frontera (UFRO),CL,Chile
+1201-1400,Universidad de Las Américas (UDLA) Ecuador,EC,Ecuador
+1201-1400,Universidad de las Fuerzas Armadas ESPE (Ex - Escuela Politécnica del Ejército),EC,Ecuador
+1201-1400,Universidad de Medellín,CO,Colombia
+1201-1400,Universidad de Panama,PA,Panama
+1201-1400,Universidad de Piura,PE,Peru
+1201-1400,Universidad de San Carlos de Guatemala - USAC,GT,Guatemala
+1201-1400,Universidad de Valparaíso (UV),CL,Chile
+1201-1400,Universidad del Bío-Bío,CL,Chile
+1201-1400,Universidad del Cauca,CO,Colombia
+1201-1400,Universidad del Desarrollo (UDD),CL,Chile
+1201-1400,Universidad del Salvador,AR,Argentina
+1201-1400,Universidad del Zulia,VE,Venezuela
+1201-1400,Universidad Mayor de San Andrés (UMSA),BO,Bolivia
+1201-1400,Universidad Nacional Agraria la Molina,PE,Peru
+1201-1400,Universidad Nacional de Mar del Plata,AR,Argentina
+1201-1400,Universidad Nacional de Río Cuarto - UNRC,AR,Argentina
+1201-1400,Universidad Nacional de San Martín (UNSAM),AR,Argentina
+1201-1400,Universidad Nacional del Comahue,AR,Argentina
+1201-1400,Universidad Nacional del Litoral,AR,Argentina
+1201-1400,Universidad Popular Autónoma del Estado de Puebla (UPAEP),MX,Mexico
+1201-1400,Universidad San Ignacio de Loyola,PE,Peru
+1201-1400,"Universidad Tecnológica de la Habana José Antonio Echeverría, Cujae",CU,Cuba
+1201-1400,Universidad Veracruzana,MX,Mexico
+1201-1400,Universidade do Estado do Rio de Janeiro (UERJ),BR,Brazil
+1201-1400,Universidade Federal da Bahia,BR,Brazil
+1201-1400,Universidade Federal de Juiz de Fora- (UFJF),BR,Brazil
+1201-1400,Universidade Federal de Pelotas ,BR,Brazil
+1201-1400,Universidade Federal de Santa Maria,BR,Brazil
+1201-1400,Universidade Federal de Viçosa (UFV),BR,Brazil
+1201-1400,Universidade Federal do Ceará (UFC),BR,Brazil
+1201-1400,Universidade Federal Fluminense ,BR,Brazil
+1201-1400,Universidade Presbiteriana Mackenzie,BR,Brazil
+1201-1400,Università degli studi di Bergamo,IT,Italy
+1201-1400,Universitas Islam Indonesia,ID,Indonesia
+1201-1400,Universitas Muhammadiyah Yogyakarta,ID,Indonesia
+1201-1400,Universitas Pendidikan Indonesia,ID,Indonesia
+1201-1400,Universitas Sumatera Utara,ID,Indonesia
+1201-1400,Universitatea de Vest din Timisoara / West University of Timisoara,RO,Romania
+1201-1400,Université de Franche-Comté,FR,France
+1201-1400,Université de Limoges,FR,France
+1201-1400,Université de Tunis,TN,Tunisia
+1201-1400,Université Jean Moulin Lyon 3,FR,France
+1201-1400,Université Mohammed V de Rabat,MA,Morocco
+1201-1400,Université Paris-Nanterre,FR,France
+1201-1400,Universiti Sains Islam Malaysia,MY,Malaysia
+1201-1400,Universiti Teknikal Malaysia Melaka,MY,Malaysia
+1201-1400,University of Babylon,IQ,Iraq
+1201-1400,University of Basrah,IQ,Iraq
+1201-1400,University of Bialystok,PL,Poland
+1201-1400,University of Central Oklahoma,US,United States
+1201-1400,University of Iceland,IS,Iceland
+1201-1400,University of International Business and Economics,CN,China (Mainland)
+1201-1400,University of Khartoum,SD,Sudan
+1201-1400,University of Kufa,IQ,Iraq
+1201-1400,University of Memphis,US,United States
+1201-1400,University of Miskolc ,HU,Hungary
+1201-1400,University of Missouri Saint Louis,US,United States
+1201-1400,University of Montana Missoula ,US,United States
+1201-1400,University of Niš,RS,Serbia
+1201-1400,University of North Carolina at Greensboro,US,United States
+1201-1400,University of Ostrava,CZ,Czech Republic
+1201-1400,University of Pannonia,HU,Hungary
+1201-1400,University of Peradeniya ,LK,Sri Lanka
+1201-1400,University of Rijeka,HR,Croatia
+1201-1400,University of Rzeszów,PL,Poland
+1201-1400,University of San Carlos,PH,Philippines
+1201-1400,University of San Diego,US,United States
+1201-1400,University of Sarajevo ,BA,Bosnia and Herzegovina
+1201-1400,University of Silesia in Katowice,PL,Poland
+1201-1400,University of South Alabama (USA),US,United States
+1201-1400,University of Split,HR,Croatia
+1201-1400,University of the Pacific,US,United States
+1201-1400,University of Warmia and Mazury in Olsztyn,PL,Poland
+1201-1400,University of West Bohemia ,CZ,Czech Republic
+1201-1400,University POLITEHNICA of Bucharest,RO,Romania
+1201-1400,Voronezh State University,RU,Russia
+1201-1400,Yogyakarta State University,ID,Indonesia
+1201-1400,Youngsan University,KR,South Korea
+1201-1400,Yuan Ze University,TW,Taiwan
+1201-1400,Zagazig University,EG,Egypt
+1201-1400,Narxoz University,KZ,Kazakhstan
+1401+,Akdeniz Üniversitesi,TR,Turkey
+1401+,Al-Balqa Applied University,JO,Jordan
+1401+,Ataturk University,TR,Turkey
+1401+,California State University - Los Angeles,US,United States
+1401+,California State University Long Beach,US,United States
+1401+,Cukurova University,TR,Turkey
+1401+,Georgian Technical University,GE,Georgia
+1401+,Guru Gobind Singh Indraprastha University,IN,India
+1401+,Humboldt State University,US,United States
+1401+,Illinois State University,US,United States
+1401+,Indian Statistical Institute,IN,India
+1401+,"International University of Business, Agriculture and Technology (IUBAT)",BD,Bangladesh
+1401+,Irkutsk State University,RU,Russia
+1401+,Khulna University,BD,Bangladesh
+1401+,Kwame Nkrumah University of Science and Technology,GH,Ghana
+1401+,MIREA - Russian Technological University,RU,Russia
+1401+,Moscow City University,RU,Russia
+1401+,Nara Institute of Science and Technology,JP,Japan
+1401+,Pontificia Universidade Católica do Campinas - PUC Campinas,BR,Brazil
+1401+,Pontificia Universidade Católica do Minas Gerais - PUC Minas,BR,Brazil
+1401+,Pontifícia Universidade Católica do Paraná,BR,Brazil
+1401+,Rajshahi University,BD,Bangladesh
+1401+,Sakarya University,TR,Turkey
+1401+,Shahjalal University of Science and Technology,BD,Bangladesh
+1401+,Soochow University (Taiwan),TW,Taiwan
+1401+,Stamford University Bangladesh,BD,Bangladesh
+1401+,State University of Malang,ID,Indonesia
+1401+,Sudan University of Science and Technology,SD,Sudan
+1401+,Technical University of Crete,GR,Greece
+1401+,Technische Universität Bergakademie Freiberg,DE,Germany
+1401+,Technische Universität Hamburg-Harburg,DE,Germany
+1401+,Technische Universität Kaiserslautern,DE,Germany
+1401+,"The University of Notre Dame, Australia",AU,Australia
+1401+,Udayana University,ID,Indonesia
+1401+,Universidad Autónoma de Chile,CL,Chile
+1401+,Universidad Autónoma de Querétaro (UAQ),MX,Mexico
+1401+,Universidad Autónoma de San Luis de Potosí,MX,Mexico
+1401+,Universidad Autonoma de Yucatan,MX,Mexico
+1401+,Universidad Autónoma del Estado de Morelos (UAEM),MX,Mexico
+1401+,"Universidad Católica Boliviana ""San Pablo""",BO,Bolivia
+1401+,Universidad Católica de Colombia ,CO,Colombia
+1401+,Universidad Católica de La Santísima Concepción - UCSC,CL,Chile
+1401+,Universidad Católica de Santiago de Guayaquil,EC,Ecuador
+1401+,Universidad Central de Chile,CL,Chile
+1401+,Universidad de Caldas,CO,Colombia
+1401+,Universidad de Cuenca,EC,Ecuador
+1401+,Universidad de La Salle,CO,Colombia
+1401+,Universidad de La Serena,CL,Chile
+1401+,Universidad de Santander - UDES,CO,Colombia
+1401+,Universidad de Sonora,MX,Mexico
+1401+,Universidad de Tarapaca,CL,Chile
+1401+,Universidad del Magdalena,CO,Colombia
+1401+,Universidad del Valle de Mexico (UVM),MX,Mexico
+1401+,Universidad Mayor de San Simón Cochabamba,BO,Bolivia
+1401+,Universidad Michoacana de San Nicolás de Hidalgo,MX,Mexico
+1401+,Universidad Nacional Autónoma de Honduras (UNAH),HN,Honduras
+1401+,Universidad Nacional de Quilmes,AR,Argentina
+1401+,Universidad Nacional de Tucumán,AR,Argentina
+1401+,Universidad Nacional del Sur,AR,Argentina
+1401+,UNIVERSIDAD POLITECNICA SALESIANA,EC,Ecuador
+1401+,Universidad Tecnica Particular De Loja (UTPL),EC,Ecuador
+1401+,Universidad Tecnológica de Bolívar,CO,Colombia
+1401+,Universidad Tecnológica de Pereira,CO,Colombia
+1401+,Universidade do Estado de Santa Catarina,BR,Brazil
+1401+,Universidade Estadual de Londrina,BR,Brazil
+1401+,Universidade Federal da Paraíba,BR,Brazil
+1401+,Universidade Federal de Goiás,BR,Brazil
+1401+,Universidade Federal de Uberlândia,BR,Brazil
+1401+,Universidade Federal do Estado do Rio de Janeiro - UNIRIO,BR,Brazil
+1401+,Universidade Federal do Parà - UFPA,BR,Brazil
+1401+,Universidade Federal do Rio Grande Do Norte,BR,Brazil
+1401+,Universitas Andalas,ID,Indonesia
+1401+,Universitas Kristen Petra,ID,Indonesia
+1401+,Universitas Muhammadiyah Surakarta,ID,Indonesia
+1401+,Université Sorbonne Paris Nord,FR,France
+1401+,University of Craiova,RO,Romania
+1401+,University of Ibadan,NG,Nigeria
+1401+,University of Kragujevac,RS,Serbia
+1401+,University of Lagos,NG,Nigeria
+1401+,University of Lampung,ID,Indonesia
+1401+,University of Mataram,ID,Indonesia
+1401+,University of Oradea,RO,Romania
+1401+,University of Stavanger,NO,Norway
+1401+,"University Politehnica of Timisoara, UPT",RO,Romania
+1401+,Western Washington University,US,United States
+1401+,Zürcher Hochschule Winterthur,CH,Switzerland
