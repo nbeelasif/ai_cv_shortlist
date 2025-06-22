@@ -52,7 +52,7 @@ def gemma_infer(prompt: str,
 # ──────────────────────────────────────────────────────────────
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'
+app.secret_key = os.getenv("FLASK_SECRET_KEY", "dev-only-secret")
 
 UPLOAD_FOLDER = 'uploads'
 JD_FOLDER = os.path.join(UPLOAD_FOLDER, 'jds')
