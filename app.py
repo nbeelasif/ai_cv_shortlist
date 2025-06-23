@@ -414,17 +414,23 @@ def upload_jd():
 @app.route('/upload_cvs', methods=['GET', 'POST'])
 def upload_cvs():
     # Helper function to extract candidate's actual name from top lines of resume text
-    def extract_name_from_cv(text):
-        lines = text.strip().split("\n")[:10]  # Consider first 10 lines only
-        for line in lines:
-            line = line.strip()
-            if not line:
-                continue
-            if any(c in line for c in "@0123456789:|") or len(line.split()) > 5:
-                continue  # Skip lines with email, numbers, or too long
-            if all(word[0].isupper() for word in line.split() if word.isalpha()):
-                return line.strip()
-        return None  # fallback if no proper name found
+def extract_name_from_cv(text):
+    lines = text.strip().split("\n")[:15]  # Look at top 15 lines
+    for line in lines:
+        line = line.strip()
+        if not line or len(line.split()) > 5:
+            continue
+        # Skip contact lines
+        if re.search(r'[@\d]', line) or line.lower().startswith("curriculum"):
+            continue
+        # Likely name pattern: "First Last", both capitalized
+        if re.match(r'^[A-Z][a-z]+ [A-Z][a-z]+$', line):
+            return line
+        # All words capitalized (e.g., "Ali Raza Khan")
+        if all(word.istitle() for word in line.split()):
+            return line
+    return None
+
 
     if request.method == 'POST':
         files = request.files.getlist('cvs')
