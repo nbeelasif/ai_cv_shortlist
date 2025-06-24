@@ -18,9 +18,14 @@ from PIL import Image
 import io
 import datetime
 import math
+import openai
+from dotenv import load_dotenv
+
+load_dotenv()
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'
+app.secret_key = os.getenv("FLASK_SECRET_KEY", "your_secret_key")
 
 UPLOAD_FOLDER = 'uploads'
 JD_FOLDER = os.path.join(UPLOAD_FOLDER, 'jds')
@@ -33,18 +38,26 @@ os.makedirs(CV_FOLDER, exist_ok=True)
 os.makedirs(JD_TEXTS_FOLDER, exist_ok=True)
 os.makedirs(PHOTO_FOLDER, exist_ok=True)
 
-app.config['JD_FOLDER'] = JD_FOLDER
 app.config['CV_FOLDER'] = CV_FOLDER
-app.config['JD_TEXTS_FOLDER'] = JD_TEXTS_FOLDER
-app.config['PHOTO_FOLDER'] = PHOTO_FOLDER
 
 nlp = spacy.load("en_core_web_sm")
 bert_model = SentenceTransformer('all-MiniLM-L6-v2')
 
+def call_openai(prompt, max_tokens=800):
+    try:
+        response = openai.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.3,
+            max_tokens=max_tokens
+        )
+        return response.choices[0].message.content.strip()
+    except Exception as e:
+        print("OpenAI Error:", e)
+        return ""
+
 def normalize_uni_name(name):
-    name = name.lower().strip()
-    name = name.translate(str.maketrans('', '', string.punctuation))
-    return name
+    return name.lower().strip().translate(str.maketrans('', '', string.punctuation))
 
 def parse_rank(rank_str):
     if isinstance(rank_str, str) and '-' in rank_str:
@@ -69,8 +82,7 @@ university_rankings = load_university_rankings()
 
 def extract_text_from_pdf(pdf_path):
     with pdfplumber.open(pdf_path) as pdf:
-        texts = [page.extract_text() for page in pdf.pages if page.extract_text()]
-        return "\n".join(texts)
+        return "\n".join([page.extract_text() for page in pdf.pages if page.extract_text()])
 
 def extract_text_from_docx(docx_path):
     doc = docx.Document(docx_path)
@@ -111,73 +123,56 @@ def extract_photo_from_pdf(pdf_path, output_name):
         filename = f"{output_name}.{ext}"
         save_path = os.path.join(PHOTO_FOLDER, filename)
         image.save(save_path)
-        return save_path
+        return f"images/candidate_photos/{filename}"
     return None
 
-def extract_education_section(text):
-    sections = re.split(r'\n\s*(education|academic background|qualifications)\s*\n', text, flags=re.IGNORECASE)
-    if len(sections) > 2:
-        return sections[2]
-    return text
+def extract_name_from_cv(text):
+    lines = text.strip().split("\n")[:25]
+    possible_names = []
 
-def extract_universities_spacy(cv_text):
-    doc = nlp(cv_text)
-    return [ent.text for ent in doc.ents if ent.label_ == "ORG"]
+    for line in lines:
+        line = line.strip()
+        if not line or len(line.split()) > 5 or len(line.split()) < 2:
+            continue
+        if re.search(r'[@\d]', line) or line.lower().startswith(('curriculum', 'work experience', 'education')):
+            continue
+        # Check for at least two title-case words
+        title_case_words = [word for word in line.split() if word[0].isupper()]
+        if len(title_case_words) >= 2:
+            possible_names.append(line)
 
-def extract_university_with_llm(text):
-    prompt = f"Extract the name of the university where the candidate studied:\n{text}\nIf not found, return 'unknown'."
-    try:
-        response = requests.post("http://localhost:11434/api/generate", json={"model": "gemma:2b", "prompt": prompt, "stream": False})
-        if response.ok:
-            return response.json().get("response", "unknown").strip().lower()
-    except Exception as e:
-        print("LLM fallback failed:", e)
-    return "unknown"
+    if possible_names:
+        # Return the first valid name-like line
+        return possible_names[0]
+
+    return None
+
+
+def extract_contact(text):
+    match = re.search(r'(\+?\d[\d\s\-]{8,}\d)', text)
+    return match.group(1).strip() if match else "Not Found"
 
 def parse_jd_with_llm(jd_text):
     prompt = f"""
 You are an expert job description parser.
-
-Your task is to extract the following ONLY IF they are clearly mentioned in the job description:
+Extract the following:
 1. Job Title
-2. Minimum years of work experience required
-3. 6 to 10 required skills, tools, or technologies
-
-⚠️ DO NOT GUESS or ADD skills based on common industry roles.
-❌ DO NOT hallucinate Python, SQL, Java, AWS, etc., unless they are mentioned in the text.
-
-### Job Description:
+2. Minimum years of experience
+3. 6-10 required skills, tools, or technologies
+### JD:
 {jd_text[:1500]}
-
-### Output format (strict JSON):
-{{
-  "title": "",
-  "experience": 0,
-  "skills": ["", "", ...]
-}}
+Output format (JSON):
+{{"title": "", "experience": 0, "skills": []}}
 """
-
     try:
-        response = requests.post(
-            "http://localhost:11434/api/generate",
-            json={"model": "gemma:2b", "prompt": prompt, "stream": False}
-        )
-        if response.ok:
-            raw = response.json().get("response", "").strip()
-            return json.loads(raw)
-    except Exception as e:
-        print("LLM JD parsing failed:", e)
-
-    return {"title": "", "experience": 0, "skills": []}
-
+        raw = call_openai(prompt)
+        return json.loads(raw)
+    except:
+        return {"title": "", "experience": 0, "skills": []}
 
 def extract_university(cv_text, cutoff=85):
-    edu_section = extract_education_section(cv_text)
-    edu_section_clean = normalize_uni_name(edu_section)
-    for known_uni in university_rankings.keys():
-        if known_uni in edu_section_clean:
-            return known_uni
-    universities = extract_universities_spacy(edu_section)
+    doc = nlp(cv_text)
+    universities = [ent.text for ent in doc.ents if ent.label_ == "ORG"]
     best_uni = "unknown"
     best_score = 0
     for uni in universities:
@@ -186,183 +181,69 @@ def extract_university(cv_text, cutoff=85):
         if score >= cutoff and score > best_score:
             best_score = score
             best_uni = match
-    if best_uni != "unknown":
-        return best_uni
-    return extract_university_with_llm(cv_text)
-
-def extract_contact(text):
-    contact = "Not Found"
-    phone_match = re.search(r'(\+?\d[\d\s\-]{8,}\d)', text)
-    if phone_match:
-        contact = phone_match.group(1).strip()
-    return contact
+    return best_uni
 
 def extract_skills_with_llm(cv_text):
     prompt = f"""
-You are an expert resume analyzer.
-
-Your job is to extract **actual technical and professional skills** from the resume below, ONLY if the candidate has demonstrated them in a real job or project (not just listed or studied).
-
-Ignore soft skills like "communication" or "teamwork". Return 6 to 10 real, role-relevant skills.
-
-### Resume Text:
+Extract 6-10 job-relevant skills from this resume:
 {cv_text[:2000]}
-
-Return output as a Python list of strings:
+Output as a Python list:
 ["Skill1", "Skill2", ...]
 """
-
     try:
-        response = requests.post(
-            "http://localhost:11434/api/generate",
-            json={"model": "gemma:2b", "prompt": prompt, "stream": False}
-        )
-        if response.ok:
-            raw = response.json().get("response", "").strip()
-            # Handle basic formatting cleanup
-            skills = json.loads(raw) if raw.startswith("[") else eval(raw)
-            return [s.strip() for s in skills if isinstance(s, str)]
-    except Exception as e:
-        print("LLM skill extraction failed:", e)
-    
-    return []
-
-
-def get_embedding(text):
-    return bert_model.encode([text])[0]
-
-def similarity_score(jd_text, cv_text):
-    jd_emb = get_embedding(jd_text)
-    cv_emb = get_embedding(cv_text)
-    return float(cosine_similarity([jd_emb], [cv_emb])[0][0])
+        raw = call_openai(prompt)
+        return json.loads(raw) if raw.startswith("[") else eval(raw)
+    except:
+        return []
 
 def generate_summary_with_llm(jd_text, cv_text):
     prompt = f"""
-You are a senior recruiter at a hiring agency, responsible for evaluating how well a single candidate matches a specific job description.
+You are a recruiter evaluating a resume against a job description.
+Return 5 bullet points. Prefix with [\u2714 Aligned] or [\u2718 Not Aligned].
 
-Objective:
-Provide an unbiased, industry-agnostic evaluation based strictly on the candidate's demonstrated experience and the job’s stated requirements.
-
-IMPORTANT RULES:
-- DO NOT assume relevance based on the candidate’s industry or company.
-- DO NOT infer alignment from titles alone — evaluate described duties and technologies.
-- DO NOT include any domain-specific praise (e.g., telecom, banking, healthcare) unless the job description explicitly demands domain experience.
-- DO NOT hallucinate skills or infer knowledge not explicitly stated in the resume.
-
-OUTPUT REQUIREMENTS:
-- Return exactly 5 bullet points.
-- Each bullet must start with either:
-  - [✔ Aligned] — if resume clearly demonstrates a required skill/experience.
-  - [✘ Not Aligned] — if resume lacks or vaguely references a required item.
-- Be brief and factual. Do not include educational info unless it is mentioned in the job requirements.
-
-Job Description:
+JD:
 {jd_text[:1000]}
 
-Candidate Resume:
+CV:
 {cv_text[:2000]}
-
-Output example:
-- [✔ Aligned] Developed ETL pipelines using Python and SQL.
-- [✘ Not Aligned] No evidence of cloud platform experience (e.g., Azure, AWS).
 """
     try:
-        response = requests.post(
-            "http://localhost:11434/api/generate",
-            json={"model": "gemma:2b", "prompt": prompt, "stream": False}
-        )
-        if response.ok:
-            summary = response.json().get("response", "").strip()
-            summary_points = [
-                re.sub(r"^[\-\u2022\d\.\)\s]+", "", line).strip()
-                for line in summary.split("\n") if line.strip()
-            ]
-            return summary_points[:5]
-    except Exception as e:
-        print("Gemma summary failed:", e)
-    return ["[✘ Not Aligned] Summary could not be generated."]
+        raw = call_openai(prompt)
+        return [line.strip("-\u2022 ").strip() for line in raw.split("\n") if line.strip()][:5]
+    except:
+        return ["[\u2718 Not Aligned] Summary could not be generated."]
 
-
-# UPDATED relevance function with domain mismatch logic
 def is_candidate_relevant(jd_text, cv_text):
     jd_title = session.get("jd_title", "").lower()
-    jd_experience = session.get("jd_experience", 0)
+    jd_exp = session.get("jd_experience", 0)
     jd_skills = session.get("jd_skills", [])
-    skill_list = ', '.join(jd_skills)
-
     prompt = f"""
-You are an expert AI resume evaluator.
+Evaluate this resume strictly against the JD.
+Title: {jd_title}
+Min Exp: {jd_exp}
+Skills: {', '.join(jd_skills)}
 
-Evaluate the following candidate **strictly** against the job description.
+Resume:
+{cv_text[:2000]}
 
-### JOB REQUIREMENTS:
-- Title: {jd_title}
-- Minimum Experience: {jd_experience} years
-- Must-Have Skills: {skill_list}
-
-### INSTRUCTIONS:
-- Carefully read the resume content.
-- If resume shows unrelated work experience (e.g., finance, HR, accounting) and no matching job duties, return: Not Relevant
-- Do not assume someone is relevant unless technical roles and job duties are clearly present
-- Vague references to Excel, data entry, or office work DO NOT count as relevant
-
-### RESPONSE:
-Return one of exactly these 3 options:
+Answer one of:
 Relevant
 Partially Relevant
 Not Relevant
-
-### RESUME:
-{cv_text[:2000]}
-
-Your Answer:
 """
-
-    try:
-        response = requests.post(
-            "http://localhost:11434/api/generate",
-            json={"model": "gemma:2b", "prompt": prompt, "stream": False}
-        )
-        if response.ok:
-            result = response.json().get("response", "").strip().lower()
-            print("LLM Relevance Response:", result)
-
-            if "not relevant" in result:
-                return "Not Relevant"
-            elif "partially relevant" in result:
-                return "Partially Relevant"
-            elif "relevant" in result:
-                return "Relevant"
-            else:
-                print(f"⚠️ Unexpected LLM response: {result}")
-                return "Not Relevant"
-    except Exception as e:
-        print("LLM relevance check failed:", e)
-
+    result = call_openai(prompt).lower()
+    if "not relevant" in result:
+        return "Not Relevant"
+    elif "partially relevant" in result:
+        return "Partially Relevant"
+    elif "relevant" in result:
+        return "Relevant"
     return "Not Relevant"
 
-# Additional helper function to add more validation
-def validate_job_field_match(jd_title, cv_text):
-    """Extra validation to catch obvious field mismatches"""
-    jd_title_lower = jd_title.lower()
-    cv_text_lower = cv_text.lower()
-    
-    # Define field keywords
-    data_fields = ['data', 'analytics', 'database', 'sql', 'python', 'architect', 'engineer', 'scientist']
-    accounting_fields = ['accounting', 'bookkeeping', 'accounts', 'ledger', 'financial', 'audit', 'tax']
-    marketing_fields = ['marketing', 'advertising', 'campaign', 'brand', 'social media']
-    
-    # Check if JD is data-related
-    if any(keyword in jd_title_lower for keyword in data_fields):
-        # Check if CV is clearly from accounting/finance
-        accounting_matches = sum(1 for keyword in accounting_fields if keyword in cv_text_lower)
-        data_matches = sum(1 for keyword in data_fields if keyword in cv_text_lower)
-        
-        if accounting_matches > 3 and data_matches < 2:
-            return False  # Clear mismatch
-            
-    return True  # No obvious mismatch detected
-
+def similarity_score(jd_text, cv_text):
+    jd_emb = bert_model.encode([jd_text])[0]
+    cv_emb = bert_model.encode([cv_text])[0]
+    return float(cosine_similarity([jd_emb], [cv_emb])[0][0])
 
 @app.route('/')
 def index():
@@ -390,46 +271,21 @@ def upload_jd():
             f.write(jd_content)
 
         parsed_jd = parse_jd_with_llm(jd_content)
-
-        # Store values in session
         session['jd_text_filename'] = jd_text_filename
         session['jd_content'] = jd_content
         session['jd_title'] = parsed_jd.get('title', '')
         session['jd_experience'] = parsed_jd.get('experience', 0)
         session['jd_skills'] = parsed_jd.get('skills', [])
 
-        return render_template(
-            'upload_jd_success.html',
-            jd_content=jd_content,
-            jd_title=session['jd_title'],
-            jd_experience=session['jd_experience'],
-            jd_skills=session['jd_skills']
-        )
-
+        return render_template('upload_jd_success.html',
+                               jd_content=jd_content,
+                               jd_title=session['jd_title'],
+                               jd_experience=session['jd_experience'],
+                               jd_skills=session['jd_skills'])
     return render_template('upload_jd.html')
 
 @app.route('/upload_cvs', methods=['GET', 'POST'])
-
 def upload_cvs():
-    # Helper function to extract candidate's actual name from top lines of resume text
-def extract_name_from_cv(text):
-    lines = text.strip().split("\n")[:15]  # Look at top 15 lines
-    for line in lines:
-        line = line.strip()
-        if not line or len(line.split()) > 5:
-            continue
-        # Skip contact lines
-        if re.search(r'[@\d]', line) or line.lower().startswith("curriculum"):
-            continue
-        # Likely name pattern: "First Last", both capitalized
-        if re.match(r'^[A-Z][a-z]+ [A-Z][a-z]+$', line):
-            return line
-        # All words capitalized (e.g., "Ali Raza Khan")
-        if all(word.istitle() for word in line.split()):
-            return line
-    return None
-
-
     if request.method == 'POST':
         files = request.files.getlist('cvs')
         if not files:
@@ -441,110 +297,67 @@ def extract_name_from_cv(text):
 
         for file in files:
             if file and file.filename != '':
-                # Save uploaded file
                 filename = f"{uuid.uuid4()}_{secure_filename(file.filename)}"
                 filepath = os.path.join(CV_FOLDER, filename)
                 file.save(filepath)
-
-                # Extract text from file (PDF or DOCX)
                 text = extract_text_from_pdf(filepath) if filename.endswith('.pdf') else extract_text_from_docx(filepath)
-
-                # 🆕 Extract actual candidate name from text, fallback to filename if not found
-                extracted_name = extract_name_from_cv(text)
-                name_part = extracted_name if extracted_name else os.path.splitext(file.filename)[0].replace('_', ' ').replace('-', ' ').title()
-
-                # University extraction and ranking
+                name = extract_name_from_cv(text) or os.path.splitext(file.filename)[0].replace('_', ' ').title()
+                safe_name = re.sub(r'[^a-zA-Z0-9_]', '', name.replace(' ', '_').lower())
+                photo_path = extract_photo_from_pdf(filepath, safe_name)
                 university = extract_university(text)
-                normalized_uni = normalize_uni_name(university)
-                uni_rank = university_rankings.get(normalized_uni, 1000)
-
-                # Similarity scoring using BERT
+                uni_rank = university_rankings.get(normalize_uni_name(university), 1000)
                 sim_score = similarity_score(jd_content, text)
-
-                # Relevance classification using job title and LLM
-                if not validate_job_field_match(session['jd_title'], text):
-                    relevance_tag = "Not Relevant"
-                else:
-                    relevance_tag = is_candidate_relevant(jd_content, text)
-
-                # Ranking score: normalized university rank
+                relevance = is_candidate_relevant(jd_content, text)
                 rank_score = 1 - (float(uni_rank) / max_rank)
 
-                # Final score logic based on relevance and similarity
-                if relevance_tag == "Relevant":
+                if relevance == "Relevant":
                     if sim_score > 0.6 and rank_score > 0.5:
                         final_score = 0.7 * sim_score + 0.3 * rank_score
-                        reason = "Strong match: high similarity + good university"
                     elif sim_score > 0.5:
                         final_score = 0.6 * sim_score + 0.2 * rank_score
-                        reason = "Good match: decent similarity"
                     else:
-                        relevance_tag = "Partially Relevant"
+                        relevance = "Partially Relevant"
                         final_score = 0.3 * sim_score + 0.1 * rank_score
-                        reason = "Downgraded: low similarity despite relevance"
-                elif relevance_tag == "Partially Relevant":
-                    if sim_score > 0.4:
-                        final_score = 0.4 * sim_score + 0.2 * rank_score
-                        reason = "Partial match with acceptable similarity"
-                    else:
-                        final_score = 0.1 * sim_score
-                        reason = "Weak partial match"
+                elif relevance == "Partially Relevant":
+                    final_score = 0.4 * sim_score + 0.2 * rank_score if sim_score > 0.4 else 0.1 * sim_score
                 else:
                     final_score = 0.0
-                    reason = "Not relevant to job requirements"
 
-                print(f"[SCORING] {name_part} → {relevance_tag} | Sim: {round(sim_score,3)} | Final: {round(final_score,3)} | {reason}")
-
-                # LLM-based summary of alignment to JD
                 summary = generate_summary_with_llm(jd_content, text)
-
-                # Extract contact details from text
                 contact = extract_contact(text)
-
-                # Extract candidate photo from CV
-                photo_filename = extract_photo_from_pdf(filepath, name_part.replace(' ', '_').lower())
-                if photo_filename:
-                    photo_url = photo_filename.replace("\\", "/")
-                    if photo_url.startswith("static/"):
-                        photo_url = photo_url[len("static/"):]
-                else:
-                    photo_url = None
-
-                # Extract LLM-driven contextual skills
                 skills = extract_skills_with_llm(text)
 
-                # Assemble full candidate profile
                 candidates.append({
                     'filename': filename,
-                    'name': name_part,
-                    'text_excerpt': text[:300],
+                    'name': name,
                     'university': university.title(),
                     'uni_rank': round(float(uni_rank), 1) if uni_rank != 1000 else "Unknown",
                     'similarity_score': round(float(sim_score), 3),
                     'final_score': round(float(final_score), 3),
                     'summary': summary,
-                    'photo_path': photo_url,
+                    'photo_path': photo_path,
                     'contact': contact,
                     'applied_date': datetime.datetime.now().strftime("%Y-%m-%d"),
                     'status': 'Pending Review',
-                    'relevance': relevance_tag,
-                    'relevance_reason': reason,
+                    'relevance': relevance,
                     'skills': skills
                 })
 
-        # Sort candidates by descending final score
         candidates.sort(key=lambda c: c['final_score'], reverse=True)
         session['candidates'] = candidates
         return redirect(url_for('results'))
 
     return render_template('upload_cvs.html')
 
-
 @app.route('/results')
 def results():
-    candidates = session.get('candidates', [])
-    jd_content = session.get('jd_content', '')
-    return render_template('results.html', jd_content=jd_content, candidates=candidates)
+    return render_template('results.html',
+                           jd_content=session.get('jd_content', ''),
+                           candidates=session.get('candidates', []))
+
+@app.route('/view_resume/<filename>')
+def view_resume(filename):
+    return send_from_directory(app.config['CV_FOLDER'], filename)
 
 @app.route('/export_csv')
 def export_csv():
@@ -562,10 +375,6 @@ def export_csv():
 
     return Response(generate(), mimetype='text/csv',
                     headers={"Content-Disposition": "attachment;filename=shortlisted_candidates.csv"})
-
-@app.route('/view_resume/<filename>')
-def view_resume(filename):
-    return send_from_directory(app.config['CV_FOLDER'], filename)
 
 if __name__ == '__main__':
     app.run(debug=True)
