@@ -409,9 +409,7 @@ def upload_jd():
     return render_template('upload_jd.html')
 
 @app.route('/upload_cvs', methods=['GET', 'POST'])
-@app.route('/upload_cvs', methods=['GET', 'POST'])
 
-@app.route('/upload_cvs', methods=['GET', 'POST'])
 def upload_cvs():
     # Helper function to extract candidate's actual name from top lines of resume text
 def extract_name_from_cv(text):
