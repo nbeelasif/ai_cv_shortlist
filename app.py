@@ -2,24 +2,24 @@ from flask import Flask, render_template, request, redirect, url_for, session, s
 import os
 import uuid
 import json
-import pdfplumber
-import docx
-import pandas as pd
-from fuzzywuzzy import process
-from sentence_transformers import SentenceTransformer
+import pdfplumber  # For extracting text from PDFs
+import docx  # For extracting text from DOCX files
+import pandas as pd  # For university ranking CSV handling
+from fuzzywuzzy import process  # For fuzzy matching universities
+from sentence_transformers import SentenceTransformer  # For similarity scoring
 from sklearn.metrics.pairwise import cosine_similarity
-import spacy
+import spacy  # NLP for NER (names, orgs)
 import string
 import re
-import requests
-import fitz  # PyMuPDF
+import requests  # Used by openai SDK and potential future LLM fallbacks
+import fitz  # PyMuPDF – for photo extraction from PDF
 from werkzeug.utils import secure_filename
-from PIL import Image
+from PIL import Image  # Image processing for candidate photos
 import io
 import datetime
 import math
-import openai
-from dotenv import load_dotenv
+import openai  # OpenAI GPT model usage
+from dotenv import load_dotenv  # Load .env variables
 
 load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -27,22 +27,23 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 app = Flask(__name__)
 app.secret_key = os.getenv("FLASK_SECRET_KEY", "your_secret_key")
 
+# Folder setup
 UPLOAD_FOLDER = 'uploads'
 JD_FOLDER = os.path.join(UPLOAD_FOLDER, 'jds')
 CV_FOLDER = os.path.join(UPLOAD_FOLDER, 'cvs')
 JD_TEXTS_FOLDER = os.path.join(UPLOAD_FOLDER, 'jd_texts')
 PHOTO_FOLDER = os.path.join('static', 'images', 'candidate_photos')
-
 os.makedirs(JD_FOLDER, exist_ok=True)
 os.makedirs(CV_FOLDER, exist_ok=True)
 os.makedirs(JD_TEXTS_FOLDER, exist_ok=True)
 os.makedirs(PHOTO_FOLDER, exist_ok=True)
-
 app.config['CV_FOLDER'] = CV_FOLDER
 
+# Load models
 nlp = spacy.load("en_core_web_sm")
 bert_model = SentenceTransformer('all-MiniLM-L6-v2')
 
+# Helper functions
 def call_openai(prompt, max_tokens=800):
     try:
         response = openai.chat.completions.create(
@@ -125,32 +126,24 @@ def extract_photo_from_pdf(pdf_path, output_name):
         image.save(save_path)
         return f"images/candidate_photos/{filename}"
     return None
+
 def extract_name(text, filename):
     top = "\n".join(text.splitlines()[:20])
-
-    # 1. spaCy NER
     doc = nlp(top)
     for ent in doc.ents:
         if ent.label_ == "PERSON" and 2 <= len(ent.text.split()) <= 4:
             return ent.text.title()
-
-    # 2. Heuristic: first clean line
     for line in top.splitlines():
         l = line.strip()
-        if l and l[0].isalpha() and not re.search(r'[@\d:|]', l) and len(l.split())<=5:
+        if l and l[0].isalpha() and not re.search(r'[@\d:|]', l) and len(l.split()) <= 5:
             return l.title()
-
-    # 3. Filename cleanup
     base = os.path.splitext(filename)[0]
     clean = re.sub(r'(?i)(resume|cv|final|v\d+)', '', base)
     clean = re.sub(r'[_\-]+', ' ', clean).title()
     names = [w for w in clean.split() if w.istitle()]
     if names:
         return ' '.join(names[:3])
-
-    # 4. OpenAI fallback
-    return extract_name_openai(text)  
-
+    return "Unknown"
 
 def extract_contact(text):
     match = re.search(r'(\+?\d[\d\s\-]{8,}\d)', text)
@@ -203,7 +196,7 @@ Output as a Python list:
 def generate_summary_with_llm(jd_text, cv_text):
     prompt = f"""
 You are a recruiter evaluating a resume against a job description.
-Return 5 bullet points. Prefix with [\u2714 Aligned] or [\u2718 Not Aligned].
+Return 5 bullet points. Prefix with [✔ Aligned] or [✘ Not Aligned].
 
 JD:
 {jd_text[:1000]}
@@ -213,9 +206,9 @@ CV:
 """
     try:
         raw = call_openai(prompt)
-        return [line.strip("-\u2022 ").strip() for line in raw.split("\n") if line.strip()][:5]
+        return [line.strip("-• ").strip() for line in raw.split("\n") if line.strip()][:5]
     except:
-        return ["[\u2718 Not Aligned] Summary could not be generated."]
+        return ["[✘ Not Aligned] Summary could not be generated."]
 
 def is_candidate_relevant(jd_text, cv_text):
     jd_title = session.get("jd_title", "").lower()
@@ -249,6 +242,7 @@ def similarity_score(jd_text, cv_text):
     cv_emb = bert_model.encode([cv_text])[0]
     return float(cosine_similarity([jd_emb], [cv_emb])[0][0])
 
+# Routes
 @app.route('/')
 def index():
     return redirect(url_for('upload_jd'))
@@ -258,7 +252,6 @@ def upload_jd():
     if request.method == 'POST':
         text = request.form.get('jd_text')
         file = request.files.get('jd_file')
-
         if file and file.filename != '':
             filename = f"{uuid.uuid4()}_{secure_filename(file.filename)}"
             filepath = os.path.join(JD_FOLDER, filename)
@@ -268,19 +261,16 @@ def upload_jd():
             jd_content = text.strip()
         else:
             return "Please provide a job description either as text or file.", 400
-
         jd_text_filename = f"{uuid.uuid4()}.txt"
         jd_text_path = os.path.join(JD_TEXTS_FOLDER, jd_text_filename)
         with open(jd_text_path, 'w', encoding='utf-8') as f:
             f.write(jd_content)
-
         parsed_jd = parse_jd_with_llm(jd_content)
         session['jd_text_filename'] = jd_text_filename
         session['jd_content'] = jd_content
         session['jd_title'] = parsed_jd.get('title', '')
         session['jd_experience'] = parsed_jd.get('experience', 0)
         session['jd_skills'] = parsed_jd.get('skills', [])
-
         return render_template('upload_jd_success.html',
                                jd_content=jd_content,
                                jd_title=session['jd_title'],
@@ -294,11 +284,9 @@ def upload_cvs():
         files = request.files.getlist('cvs')
         if not files:
             return "No CV files selected for upload.", 400
-
         jd_content = session.get('jd_content', '')
         max_rank = max(university_rankings.values()) if university_rankings else 1000
         candidates = []
-
         for file in files:
             if file and file.filename != '':
                 filename = f"{uuid.uuid4()}_{secure_filename(file.filename)}"
@@ -313,7 +301,6 @@ def upload_cvs():
                 sim_score = similarity_score(jd_content, text)
                 relevance = is_candidate_relevant(jd_content, text)
                 rank_score = 1 - (float(uni_rank) / max_rank)
-
                 if relevance == "Relevant":
                     if sim_score > 0.6 and rank_score > 0.5:
                         final_score = 0.7 * sim_score + 0.3 * rank_score
@@ -326,11 +313,9 @@ def upload_cvs():
                     final_score = 0.4 * sim_score + 0.2 * rank_score if sim_score > 0.4 else 0.1 * sim_score
                 else:
                     final_score = 0.0
-
                 summary = generate_summary_with_llm(jd_content, text)
                 contact = extract_contact(text)
                 skills = extract_skills_with_llm(text)
-
                 candidates.append({
                     'filename': filename,
                     'name': name,
@@ -346,11 +331,9 @@ def upload_cvs():
                     'relevance': relevance,
                     'skills': skills
                 })
-
         candidates.sort(key=lambda c: c['final_score'], reverse=True)
         session['candidates'] = candidates
         return redirect(url_for('results'))
-
     return render_template('upload_cvs.html')
 
 @app.route('/results')
@@ -368,7 +351,6 @@ def export_csv():
     candidates = session.get('candidates', [])
     if not candidates:
         return "No candidates to export.", 400
-
     def generate():
         data = ["Name,University,University Rank,Similarity Score,Final Score,Contact,Status,Relevance,Top Skills"]
         for c in candidates:
@@ -376,7 +358,6 @@ def export_csv():
             row = f"{c['name']},{c['university']},{c['uni_rank']},{c['similarity_score']},{c['final_score']},{c['contact']},{c['status']},{c['relevance']},{skills}"
             data.append(row)
         return "\n".join(data)
-
     return Response(generate(), mimetype='text/csv',
                     headers={"Content-Disposition": "attachment;filename=shortlisted_candidates.csv"})
 
