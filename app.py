@@ -239,7 +239,7 @@ Not Relevant
 def similarity_score(jd_text, cv_text):
     vectorizer = TfidfVectorizer(stop_words='english')
     tfidf = vectorizer.fit_transform([jd_text, cv_text])
-    return (tfidf * tfidf.T).A[0,1]
+    return (tfidf * tfidf.T).toarray()[0, 1]
 
 # Routes
 @app.route('/')
