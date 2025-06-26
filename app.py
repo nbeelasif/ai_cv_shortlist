@@ -125,26 +125,31 @@ def extract_photo_from_pdf(pdf_path, output_name):
         image.save(save_path)
         return f"images/candidate_photos/{filename}"
     return None
-
 def extract_name(text, filename):
-    top_lines = text.strip().split("\n")[:15]
-    for line in top_lines:
-        line = line.strip()
-        if not line or any(c in line for c in "@0123456789:|") or len(line.split()) > 5:
-            continue
-        if re.search(r'(curriculum|resume|vitae)', line.lower()):
-            continue
-        if all(w[0].isupper() for w in line.split() if w.isalpha()):
-            return line
-    doc = nlp("\n".join(top_lines))
+    top = "\n".join(text.splitlines()[:20])
+
+    # 1. spaCy NER
+    doc = nlp(top)
     for ent in doc.ents:
         if ent.label_ == "PERSON" and 2 <= len(ent.text.split()) <= 4:
-            return ent.text
-    name = os.path.splitext(filename)[0]
-    name = re.sub(r'(?i)(resume|cv|final|v\d+)', '', name)
-    name = name.replace('_', ' ').replace('-', ' ').title()
-    name_words = [w for w in name.split() if w.istitle()]
-    return ' '.join(name_words[:3]) if name_words else "Unknown"
+            return ent.text.title()
+
+    # 2. Heuristic: first clean line
+    for line in top.splitlines():
+        l = line.strip()
+        if l and l[0].isalpha() and not re.search(r'[@\d:|]', l) and len(l.split())<=5:
+            return l.title()
+
+    # 3. Filename cleanup
+    base = os.path.splitext(filename)[0]
+    clean = re.sub(r'(?i)(resume|cv|final|v\d+)', '', base)
+    clean = re.sub(r'[_\-]+', ' ', clean).title()
+    names = [w for w in clean.split() if w.istitle()]
+    if names:
+        return ' '.join(names[:3])
+
+    # 4. OpenAI fallback
+    return extract_name_openai(text)  
 
 
 def extract_contact(text):
