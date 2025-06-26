@@ -6,7 +6,7 @@ import pdfplumber  # For extracting text from PDFs
 import docx  # For extracting text from DOCX files
 import pandas as pd  # For university ranking CSV handling
 from fuzzywuzzy import process  # For fuzzy matching universities
-from sentence_transformers import SentenceTransformer  # For similarity scoring
+from sklearn.feature_extraction.text import TfidfVectorizer  # For similarity scoring
 from sklearn.metrics.pairwise import cosine_similarity
 import spacy  # NLP for NER (names, orgs)
 import string
@@ -41,7 +41,6 @@ app.config['CV_FOLDER'] = CV_FOLDER
 
 # Load models
 nlp = spacy.load("en_core_web_sm")
-bert_model = SentenceTransformer('all-MiniLM-L6-v2')
 
 # Helper functions
 def call_openai(prompt, max_tokens=800):
@@ -238,9 +237,9 @@ Not Relevant
     return "Not Relevant"
 
 def similarity_score(jd_text, cv_text):
-    jd_emb = bert_model.encode([jd_text])[0]
-    cv_emb = bert_model.encode([cv_text])[0]
-    return float(cosine_similarity([jd_emb], [cv_emb])[0][0])
+    vectorizer = TfidfVectorizer(stop_words='english')
+    tfidf = vectorizer.fit_transform([jd_text, cv_text])
+    return (tfidf * tfidf.T).A[0,1]
 
 # Routes
 @app.route('/')
