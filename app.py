@@ -126,26 +126,25 @@ def extract_photo_from_pdf(pdf_path, output_name):
         return f"images/candidate_photos/{filename}"
     return None
 
-def extract_name_from_cv(text):
-    lines = text.strip().split("\n")[:25]
-    possible_names = []
-
-    for line in lines:
+def extract_name(text, filename):
+    top_lines = text.strip().split("\n")[:15]
+    for line in top_lines:
         line = line.strip()
-        if not line or len(line.split()) > 5 or len(line.split()) < 2:
+        if not line or any(c in line for c in "@0123456789:|") or len(line.split()) > 5:
             continue
-        if re.search(r'[@\d]', line) or line.lower().startswith(('curriculum', 'work experience', 'education')):
+        if re.search(r'(curriculum|resume|vitae)', line.lower()):
             continue
-        # Check for at least two title-case words
-        title_case_words = [word for word in line.split() if word[0].isupper()]
-        if len(title_case_words) >= 2:
-            possible_names.append(line)
-
-    if possible_names:
-        # Return the first valid name-like line
-        return possible_names[0]
-
-    return None
+        if all(w[0].isupper() for w in line.split() if w.isalpha()):
+            return line
+    doc = nlp("\n".join(top_lines))
+    for ent in doc.ents:
+        if ent.label_ == "PERSON" and 2 <= len(ent.text.split()) <= 4:
+            return ent.text
+    name = os.path.splitext(filename)[0]
+    name = re.sub(r'(?i)(resume|cv|final|v\d+)', '', name)
+    name = name.replace('_', ' ').replace('-', ' ').title()
+    name_words = [w for w in name.split() if w.istitle()]
+    return ' '.join(name_words[:3]) if name_words else "Unknown"
 
 
 def extract_contact(text):
@@ -301,7 +300,7 @@ def upload_cvs():
                 filepath = os.path.join(CV_FOLDER, filename)
                 file.save(filepath)
                 text = extract_text_from_pdf(filepath) if filename.endswith('.pdf') else extract_text_from_docx(filepath)
-                name = extract_name_from_cv(text) or os.path.splitext(file.filename)[0].replace('_', ' ').title()
+                name = extract_name(text, file.filename)
                 safe_name = re.sub(r'[^a-zA-Z0-9_]', '', name.replace(' ', '_').lower())
                 photo_path = extract_photo_from_pdf(filepath, safe_name)
                 university = extract_university(text)
