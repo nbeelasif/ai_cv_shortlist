@@ -71,7 +71,7 @@ def parse_rank(rank_str):
     except:
         return 1000
 
-def load_university_rankings(csv_path='static/data/university_rankings_minimal.csv'):
+def load_university_rankings(csv_path='Static/data/university_rankings_minimal.csv'):
     df = pd.read_csv(csv_path)
     df['institution_normalized'] = df['Institution Name'].str.lower().str.strip()
     df['institution_normalized'] = df['institution_normalized'].apply(normalize_uni_name)
