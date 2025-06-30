@@ -226,7 +226,9 @@ def upload_cvs():
         session['candidates'] = candidates
 
         # After processing, redirect to the results page
-        return redirect(url_for('results'))
+        session['uploaded_files'] = [f for f in files if f.filename != '']
+        return render_template('progress.html')
+
 
     # For a GET request, just show the upload form
     return render_template('upload_cvs.html')
@@ -250,6 +252,71 @@ def view_resume(filename):
 def export_csv():
     # ... (Your export logic is fine) ...
     pass
+
+@app.route('/processing')
+def processing():
+    if 'jd_content' not in session or 'uploaded_files' not in session:
+        return redirect(url_for('upload_jd'))
+
+    files = session['uploaded_files']
+    jd_content = session.get('jd_content', '')
+    max_rank = max(university_rankings.values()) if university_rankings else 1000
+    candidates = []
+
+    def generate():
+        total = len(files)
+        for idx, file in enumerate(files):
+            filename = f"{uuid.uuid4()}_{secure_filename(file.filename)}"
+            filepath = os.path.join(CV_FOLDER, filename)
+            file.save(filepath)
+
+            text = extract_text_from_pdf(filepath) if filename.endswith('.pdf') else extract_text_from_docx(filepath)
+            name = extract_name(text, file.filename)
+            safe_name = re.sub(r'[^a-zA-Z0-9_]', '', name.replace(' ', '_').lower())
+            photo_path = extract_photo_from_pdf(filepath, safe_name)
+            university = extract_university(text)
+            uni_rank = university_rankings.get(normalize_uni_name(university), 1000)
+            sim_score = similarity_score(jd_content, text)
+            relevance = is_candidate_relevant(jd_content, text)
+            rank_score = 1 - (float(uni_rank) / max_rank)
+            final_score = 0.0
+            if relevance == "Relevant":
+                final_score = (0.6 * sim_score) + (0.4 * rank_score)
+            elif relevance == "Partially Relevant":
+                final_score = (0.3 * sim_score) + (0.2 * rank_score)
+
+            summary = generate_summary_with_llm(jd_content, text)
+            contact = extract_contact(text)
+            skills = extract_skills_with_llm(text)
+
+            candidates.append({
+                'filename': filename,
+                'name': name,
+                'university': university.title(),
+                'uni_rank': round(float(uni_rank), 1) if uni_rank != 1000 else "Unknown",
+                'similarity_score': round(float(sim_score), 3),
+                'final_score': round(float(final_score), 3),
+                'summary': summary,
+                'photo_path': photo_path,
+                'contact': contact,
+                'applied_date': datetime.datetime.now().strftime("%Y-%m-%d"),
+                'status': 'Pending Review',
+                'relevance': relevance,
+                'skills': skills
+            })
+
+            percent = int(((idx + 1) / total) * 100)
+            yield f"data: {json.dumps({'percent': percent, 'message': f'Processed {idx + 1} of {total}', 'complete': False})}\n\n"
+
+        candidates.sort(key=lambda c: c['final_score'], reverse=True)
+        session['candidates'] = candidates
+        yield f"data: {json.dumps({'percent': 100, 'message': 'All candidates processed.', 'complete': True})}\n\n"
+
+    return Response(generate(), mimetype='text/event-stream')
+
+@app.route('/progress_stream')
+def progress_stream():
+    return redirect(url_for('processing'))
 
 
 if __name__ == '__main__':
