@@ -1,59 +1,74 @@
 {% extends "base.html" %}
 
-{% block title %}Welcome to the AI Shortlisting POC{% endblock %}
-
 {% block content %}
+<!-- Hero Section -->
 <section class="hero-section">
-    <div class="hero-container">
-        <div class="hero-content">
-            <h1 class="hero-title">Welcome to Jusour</h1>
-            <h2 class="hero-subtitle">A bridge to your new future</h2>
-            <p class="hero-text">
-                This AI-powered Proof of Concept demonstrates automated candidate shortlisting. It analyzes a job description and ranks CVs based on their relevance and qualifications.
-            </p>
-            <a href="#upload-form" class="btn btn-maroon">Start Here  ❯</a>
-        </div>
-        <div class="hero-visual">
-            <div class="shape shape-blue-1"></div>
-            <div class="shape shape-yellow-1"></div>
-            <div class="shape shape-maroon-1"></div>
-            <div class="hero-image image-1"><img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80" alt="Team meeting"></div>
-            <div class="hero-image image-2"><img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&q=80" alt="Reviewing documents"></div>
-        </div>
+  <div class="hero-container">
+    <div class="hero-content">
+      <h1 class="hero-title">Welcome to Jusour</h1>
+      <h2 class="hero-subtitle">A bridge to your new future</h2>
+      <p class="hero-text">
+        This AI-powered Proof of Concept demonstrates automated candidate shortlisting. It analyzes a job description and ranks CVs based on their relevance and qualifications.
+      </p>
+      <a href="#upload-form" class="btn btn-maroon text-white">Start Here &nbsp;›</a>
     </div>
+    <div class="hero-visual">
+      <div class="shape shape-blue-1"></div>
+      <div class="shape shape-yellow-1"></div>
+      <div class="shape shape-maroon-1"></div>
+      <div class="hero-image image-1">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80" alt="Team meeting">
+      </div>
+      <div class="hero-image image-2">
+        <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&q=80" alt="Reviewing documents">
+      </div>
+    </div>
+  </div>
 </section>
 
-<div id="upload-form" class="upload-section">
-    {% if error %}
-        <div class="alert alert-danger" role="alert">{{ error }}</div>
-    {% endif %}
-
-    <div class="form-card">
-        <div class="form-header">
-            <h2 class="form-title">Step 1: Provide Job Description</h2>
-            <p class="form-subtitle">Paste the job description or upload a file to begin.</p>
-        </div>
-        <form method="post" enctype="multipart/form-data" class="form-content">
-            <div class="form-group"><label for="jd_text" class="form-label">Paste Job Description</label><textarea class="form-control" id="jd_text" name="jd_text" rows="8" placeholder="e.g., Seeking a Senior Python Developer..."></textarea></div>
-            <div class="form-divider"><span>OR</span></div>
-            <div class="form-group"><label for="jd_file" class="form-label">Upload a File (PDF or DOCX)</label><input class="form-control" type="file" id="jd_file" name="jd_file" accept=".pdf,.docx"></div>
-            <button type="submit" class="btn btn-primary w-100 mt-3">Analyze Job Description</button>
-        </form>
+<!-- Upload Form Section -->
+<section id="upload-form" class="upload-section">
+  <div class="form-card">
+    <div class="form-header">
+      <h2 class="form-title">Step 1: Provide Job Description</h2>
+      <p class="form-subtitle">Paste the job description or upload a file to begin.</p>
     </div>
-</div>
+    <form method="post" enctype="multipart/form-data" class="form-content">
+      <div class="form-group">
+        <label for="jd_text" class="form-label">Paste Job Description</label>
+        <textarea class="form-control" id="jd_text" name="jd_text" rows="8" placeholder="e.g., Seeking a Senior Python Developer..."></textarea>
+      </div>
+      <div class="form-divider"><span>OR</span></div>
+      <div class="form-group">
+        <label for="jd_file" class="form-label">Upload a File (PDF or DOCX)</label>
+        <input class="form-control" type="file" id="jd_file" name="jd_file" accept=".pdf,.docx">
+      </div>
+      <button type="submit" class="btn btn-maroon text-white w-100 mt-3">Analyze Job Description</button>
+    </form>
+  </div>
+</section>
 
+<!-- Parsed JD Results -->
 {% if jd_content %}
-<div class="results-card">
+<section class="upload-section">
+  <div class="results-card">
     <h3 class="results-title">✅ Job Description Parsed Successfully</h3>
     <div class="result-item"><strong>Job Title:</strong> {{ jd_title }}</div>
     <div class="result-item"><strong>Minimum Experience:</strong> {{ jd_experience }} years</div>
-    <div class="result-item"><strong>Key Requirements:</strong><ul class="result-list">{% for req in jd_skills %}<li>{{ req }}</li>{% endfor %}</ul></div>
+    <div class="result-item"><strong>Key Requirements:</strong>
+      <ul class="result-list">
+        {% for req in jd_skills %}
+          <li>{{ req }}</li>
+        {% endfor %}
+      </ul>
+    </div>
     <div class="redirect-notice"><p>Redirecting to the next step...</p></div>
-</div>
-<script>
+  </div>
+  <script>
     setTimeout(function () {
-        window.location.href = "{{ url_for('upload_cvs') }}";
+      window.location.href = "{{ url_for('upload_cvs') }}";
     }, 3500);
-</script>
+  </script>
+</section>
 {% endif %}
 {% endblock %}

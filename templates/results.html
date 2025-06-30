@@ -1,187 +1,126 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>AI Shortlisted Candidates</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      background-color: #f8f9fa;
-    }
-    .candidate-card {
-      border-radius: 1rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      padding: 1.5rem;
-      background-color: #fff;
-      transition: transform 0.2s;
-      position: relative;
-      min-height: 640px; /* Prevent card jump */
-    }
-    .candidate-card:hover {
-      transform: translateY(-3px);
-    }
-    .candidate-photo {
-      width: 80px;
-      height: 80px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 2px solid #dee2e6;
-    }
-    .summary-list {
-      font-size: 0.95rem;
-      padding-left: 1rem;
-    }
-    .toggle-btn {
-      cursor: pointer;
-      font-size: 0.85rem;
-      color: #0d6efd;
-      background: none;
-      border: none;
-      padding: 0;
-    }
-    .text-label {
-      font-weight: 600;
-      color: #6c757d;
-    }
-    .rank-badge {
-      position: absolute;
-      top: -10px;
-      right: -10px;
-      background-color: #ffc107;
-      color: #000;
-      font-size: 0.9rem;
-      font-weight: bold;
-      padding: 4px 10px;
-      border-radius: 1rem;
-    }
-  </style>
-</head>
-<body class="bg-light">
-  <div class="container mt-4">
-    <div class="text-center mb-4">
-      <img src="{{ url_for('static', filename='images/Jusour-logo.png') }}" alt="Logo" height="90">
-    </div>
+{% extends "base.html" %}
 
-    <h3 class="mb-4 text-center">AI-Shortlisted Candidates</h3>
+{% block title %}AI Shortlisted Candidates | Jusour{% endblock %}
 
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-      {% for candidate in candidates %}
-      <div class="col">
-        <div class="candidate-card h-100 d-flex flex-column justify-content-between position-relative">
-          <div class="rank-badge">Ranked #{{ loop.index }}</div>
+{% block content %}
+<div class="container mt-5">
+  <h2 class="text-center fw-bold mb-5" style="color: var(--primary-blue);">AI-Shortlisted Candidates</h2>
 
-          <div class="d-flex align-items-center mb-3">
-            {% set photo_file = candidate.photo_path.replace('\\', '/') if candidate.photo_path else 'images/default-user.png' %}
-            <img src="{{ url_for('static', filename=photo_file) }}" class="candidate-photo me-3" alt="Photo">
-            <div>
-              <h5 class="mb-0">{{ candidate.name }}</h5>
-              <small class="text-muted">Applied: {{ candidate.applied_date }}</small><br>
-              {% if candidate.relevance == 'Not Relevant' %}
-                <span class="badge bg-danger mt-1">Not Matched</span>
-              {% elif candidate.relevance == 'Partially Relevant' %}
-                <span class="badge bg-warning text-dark mt-1">Partially Matched</span>
-              {% else %}
-                <span class="badge bg-success mt-1">Matched</span>
-              {% endif %}
-            </div>
-          </div>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    {% for candidate in candidates %}
+    <div class="col">
+      <div class="candidate-card h-100 d-flex flex-column position-relative">
+        <div class="rank-badge badge position-absolute top-0 end-0 m-2 {{ 'bg-warning' if loop.index == 1 else 'bg-secondary' if loop.index == 2 else 'bg-info' }}">
+          Ranked #{{ loop.index }}
+        </div>
 
+        <div class="d-flex align-items-center mb-3">
+          {% set photo_file = candidate.photo_path.replace('\\', '/') if candidate.photo_path else 'images/default-user.png' %}
+          <img src="{{ url_for('static', filename=photo_file) }}" class="candidate-photo me-3" alt="Photo">
           <div>
-            <p class="mb-1"><span class="text-label">University:</span> {{ candidate.university }}</p>
-            <p class="mb-1"><span class="text-label">University Rank:</span> {{ candidate.uni_rank }}</p>
-            <p class="mb-1"><span class="text-label">Similarity Score:</span> {{ candidate.similarity_score }}</p>
-            <p class="mb-2"><span class="text-label">Final Score:</span> 
-              <span class="badge bg-success text-white">{{ candidate.final_score }}</span>
-            </p>
-            <p class="mb-1"><span class="text-label">Contact:</span> {{ candidate.contact }}</p>
-            <p class="mb-1"><span class="text-label">Status:</span> {{ candidate.status }}</p>
-            <p class="mb-2"><span class="text-label">Top Skills:</span> 
-              {% for skill in candidate.skills %}
-                <span class="badge bg-light text-dark me-1">{{ skill }}</span>
-              {% endfor %}
-            </p>
+            <h5 class="mb-0">{{ candidate.name }}</h5>
+            <small class="text-muted">Applied: {{ candidate.applied_date }}</small><br>
+            {% if candidate.relevance == 'Not Relevant' %}
+              <span class="badge bg-danger mt-1">Not Matched</span>
+            {% elif candidate.relevance == 'Partially Relevant' %}
+              <span class="badge bg-warning text-dark mt-1">Partially Matched</span>
+            {% else %}
+              <span class="badge bg-success mt-1">Matched</span>
+            {% endif %}
+          </div>
+        </div>
 
-            <div class="mb-2">
-              <span class="text-label">LLM Summary:</span>
-              {% if candidate.summary and candidate.summary|length > 0 %}
-              <div id="summary_{{ loop.index }}" class="collapse summary-list mt-2">
+        <div class="mb-2">
+          <p class="mb-1"><strong>University:</strong> {{ candidate.university }}</p>
+          <p class="mb-1"><strong>University Rank:</strong> {{ candidate.uni_rank }}</p>
+          <p class="mb-1"><strong>Similarity Score:</strong> {{ candidate.similarity_score }}</p>
+          <p class="mb-1"><strong>Final Score:</strong>
+            <span class="badge bg-success text-white">{{ candidate.final_score }}</span>
+          </p>
+          <p class="mb-1"><strong>Contact:</strong> {{ candidate.contact }}</p>
+          <p class="mb-1"><strong>Status:</strong> {{ candidate.status }}</p>
+          <p class="mb-1"><strong>Top Skills:</strong>
+            {% for skill in candidate.skills %}
+              <span class="badge bg-light text-dark me-1 mb-1">{{ skill }}</span>
+            {% endfor %}
+          </p>
+
+          <div class="mb-2">
+            <span class="fw-semibold">LLM Summary:</span>
+            {% if candidate.summary and candidate.summary|length > 0 %}
+              <a class="btn btn-link btn-sm px-0 text-decoration-none toggle-btn" data-bs-toggle="collapse" href="#summary_{{ loop.index }}" role="button" aria-expanded="false" aria-controls="summary_{{ loop.index }}">
+                View AI Summary
+              </a>
+              <div id="summary_{{ loop.index }}" class="collapse mt-2">
                 <ul class="ps-3">
                   {% for point in candidate.summary %}
                     {% set clean_point = point.strip() %}
-                    {% if clean_point.startswith("[✔ Aligned]") %}
-                      <li>
-                        <span class="badge bg-success me-2">✔ Aligned</span>
-                        {{ clean_point.replace("[✔ Aligned]", "").replace("<resume info>", "").strip() }}
-                      </li>
-                    {% elif clean_point.startswith("[✘ Not Aligned]") %}
-                      <li>
-                        <span class="badge bg-danger me-2">✘ Not Aligned</span>
-                        {{ clean_point.replace("[✘ Not Aligned]", "").replace("<resume info>", "").strip() }}
-                      </li>
+                    {% if '[✔ Aligned]' in clean_point %}
+                      <li><span class="badge bg-success me-2">✔ Aligned</span>{{ clean_point.replace('[✔ Aligned]', '').strip() }}</li>
+                    {% elif '[✘ Not Aligned]' in clean_point %}
+                      <li><span class="badge bg-danger me-2">✘ Not Aligned</span>{{ clean_point.replace('[✘ Not Aligned]', '').strip() }}</li>
                     {% else %}
-                      <li>{{ clean_point.replace("<resume info>", "").strip() }}</li>
+                      <li>{{ clean_point }}</li>
                     {% endif %}
                   {% endfor %}
                 </ul>
               </div>
-              <button class="toggle-btn mt-1" data-bs-toggle="collapse" data-bs-target="#summary_{{ loop.index }}">Show Summary</button>
-              {% else %}
+            {% else %}
               <div class="text-muted small">No summary available.</div>
-              {% endif %}
-            </div>
-
-            <div class="d-flex gap-2 mt-3">
-              <a href="{{ url_for('view_resume', filename=candidate.filename) }}" class="btn btn-outline-primary btn-sm" target="_blank">View Resume</a>
-              <button class="btn btn-outline-success btn-sm">Interview</button>
-            </div>
+            {% endif %}
           </div>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
 
-    <!-- Explanation Section -->
-    <div class="row mt-5 g-4">
-      <div class="col-md-6">
-        <div class="card h-100 border-start border-success border-4 shadow-sm">
-          <div class="card-body">
-            <h5 class="text-success">📊 Candidate Scoring Breakdown</h5>
-            <ul class="small ps-3 mb-2">
-              <li><strong>60–70%</strong> Resume Similarity (via TF-IDF matching)</li>
-              <li><strong>20–30%</strong> University Ranking (based on global databases)</li>
-              <li><strong>Adaptive Weights:</strong> Adjusted by Relevance classification</li>
-              <li><code>Final Score = (Similarity × Weight) + (Rank × Weight)</code></li>
-            </ul>
-            <div class="alert alert-info small mb-0">
-              Only candidates marked <strong>Matched</strong> or <strong>Partially Matched</strong> are scored.
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card h-100 border-start border-primary border-4 shadow-sm">
-          <div class="card-body">
-            <h5 class="text-primary">🧠 What the AI (LLM) Does</h5>
-            <ul class="small ps-3 mb-2">
-              <li><strong>Job Understanding:</strong> Extracts role, required experience, and key skills from JD</li>
-              <li><strong>Candidate Relevance:</strong> Classifies each CV as <strong>Matched</strong>, <strong>Partially Matched</strong>, or <strong>Not Matched</strong></li>
-              <li><strong>Summary Generation:</strong> Highlights aligned vs non-aligned qualifications in clear bullets</li>
-              <li><strong>Domain Filtering:</strong> Rejects unrelated fields like marketing/accounting for technical roles</li>
-            </ul>
-            <div class="alert alert-secondary small mb-0">
-              The LLM simulates a recruiter’s judgment by analyzing CVs with real-world context and accuracy.
-            </div>
+          <div class="d-flex gap-2 mt-3">
+            <a href="{{ url_for('view_resume', filename=candidate.filename) }}" class="btn btn-outline-primary btn-sm" target="_blank">View Resume</a>
+            <button class="btn btn-outline-success btn-sm">Interview</button>
           </div>
         </div>
       </div>
     </div>
+    {% endfor %}
+  </div>
 
-    <div class="text-center mt-5">
-      <a href="{{ url_for('upload_jd') }}" class="btn btn-secondary me-2">Back to Upload JD</a>
-      <a href="{{ url_for('upload_cvs') }}" class="btn btn-outline-dark">Upload More CVs</a>
+  <!-- Explanation Section -->
+  <div class="row mt-5 g-4">
+    <div class="col-md-6">
+      <div class="card h-100 border-start border-success border-4 shadow-sm">
+        <div class="card-body">
+          <h5 class="text-success">📊 Candidate Scoring Breakdown</h5>
+          <ul class="small ps-3 mb-2">
+            <li><strong>60–70%</strong> Resume Similarity (via TF-IDF matching)</li>
+            <li><strong>20–30%</strong> University Ranking (based on global databases)</li>
+            <li><strong>Adaptive Weights:</strong> Adjusted by Relevance classification</li>
+            <li><code>Final Score = (Similarity × Weight) + (Rank × Weight)</code></li>
+          </ul>
+          <div class="alert alert-info small mb-0">
+            Only candidates marked <strong>Matched</strong> or <strong>Partially Matched</strong> are scored.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card h-100 border-start border-primary border-4 shadow-sm">
+        <div class="card-body">
+          <h5 class="text-primary">🧠 What the AI (LLM) Does</h5>
+          <ul class="small ps-3 mb-2">
+            <li><strong>Job Understanding:</strong> Extracts role, required experience, and key skills from JD</li>
+            <li><strong>Candidate Relevance:</strong> Classifies each CV as <strong>Matched</strong>, <strong>Partially Matched</strong>, or <strong>Not Matched</strong></li>
+            <li><strong>Summary Generation:</strong> Highlights aligned vs non-aligned qualifications in clear bullets</li>
+            <li><strong>Domain Filtering:</strong> Rejects unrelated fields like marketing/accounting for technical roles</li>
+          </ul>
+          <div class="alert alert-secondary small mb-0">
+            The LLM simulates a recruiter’s judgment by analyzing CVs with real-world context and accuracy.
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+  <div class="text-center mt-5">
+    <a href="{{ url_for('upload_jd') }}" class="btn btn-secondary me-2">Back to Upload JD</a>
+    <a href="{{ url_for('upload_cvs') }}" class="btn btn-outline-dark">Upload More CVs</a>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+{% endblock %}

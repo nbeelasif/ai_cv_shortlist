@@ -251,6 +251,18 @@ def export_csv():
     # ... (Your export logic is fine) ...
     pass
 
+
+if __name__ == '__main__':
+    app.run(debug=True, host="0.0.0.0", port=5000)
+
+
+
+
+
+
+
+
+
 if __name__ == '__main__':
     # For development, it's helpful to run in debug mode
     # app.run(debug=True)

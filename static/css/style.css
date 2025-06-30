@@ -1,237 +1,304 @@
-/* ... at the top of style.css ... */
 :root {
-    --primary-blue: #002D61;
-    --accent-teal: #00A79D;
-    --maroon: #8C1D40; /* <-- ADD THIS NEW COLOR */
-    --light-gray-bg: #F3F4F6;
-    --dark-text: #333333;
-    /* ... rest of the variables ... */
+  --primary-blue: #002D61;
+  --accent-teal: #00A79D;
+  --maroon: #8C1D40;
+  --light-gray-bg: #F3F4F6;
+  --dark-text: #333333;
+  --white: #ffffff;
+  --border-radius-md: 12px;
+  --border-radius-sm: 6px;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
-/* 6. Form Card and Input Styles */
+
+/* Header + Footer */
+.app-header {
+  background-color: #fff;
+  padding: 20px 40px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-logo img {
+  height: 70px;
+}
+.header-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--primary-blue);
+  margin: 0;
+}
+.app-footer {
+  background-color: #f8f9fa;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin-top: 60px;
+}
+
+/* Form Card and Input Styles */
 .form-card {
-    background-color: var(--white);
-    border-radius: var(--border-radius-md);
-    box-shadow: var(--card-shadow);
-    padding: 30px 40px;
-    max-width: 700px;
-    margin: 20px auto; /* Center the card */
+  background-color: var(--white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--card-shadow);
+  padding: 30px 40px;
+  max-width: 700px;
+  margin: 20px auto;
 }
-
 .form-header {
-    text-align: center;
-    margin-bottom: 30px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
 }
-
 .form-title {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
-
 .form-subtitle {
-    font-size: 16px;
-    color: #6c757d;
+  font-size: 16px;
+  color: #6c757d;
 }
-
 .form-group {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
-
 .form-label {
-    font-weight: 700;
-    color: var(--primary-blue);
-    display: block;
-    margin-bottom: 8px;
+  font-weight: 700;
+  color: var(--primary-blue);
+  display: block;
+  margin-bottom: 8px;
 }
-
 .form-control {
-    border: 1px solid #ced4da;
-    border-radius: var(--border-radius-sm);
-    padding: 12px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #ced4da;
+  border-radius: var(--border-radius-sm);
+  padding: 12px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
-
 .form-control:focus {
-    border-color: var(--accent-teal);
-    box-shadow: 0 0 0 3px rgba(0, 167, 157, 0.2); /* Teal glow on focus */
-    outline: none;
+  border-color: var(--accent-teal);
+  box-shadow: 0 0 0 3px rgba(0, 167, 157, 0.2);
+  outline: none;
 }
-
 .form-divider {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #adb5bd;
-    margin: 30px 0;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #adb5bd;
+  margin: 30px 0;
 }
-
 .form-divider::before,
 .form-divider::after {
-    content: '';
-    flex: 1;
-    border-bottom: 1px solid #dee2e6;
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #dee2e6;
 }
-
 .form-divider span {
-    padding: 0 15px;
-    font-weight: 700;
+  padding: 0 15px;
+  font-weight: 700;
 }
 
-/* 7. Results Card Styles */
-.results-card {
-    background-color: #f0fffb; /* A very light green/teal background */
-    border-left: 5px solid var(--accent-teal);
-    border-radius: var(--border-radius-md);
-    padding: 25px 30px;
-    max-width: 700px;
-    margin: 40px auto;
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.results-title {
-    color: var(--accent-teal);
-    font-size: 22px;
-    margin-top: 0;
-}
-
-.result-item {
-    margin-bottom: 10px;
-    font-size: 16px;
-}
-
-.result-list {
-    padding-left: 20px;
-    margin-top: 5px;
-}
-
-.redirect-notice {
-    margin-top: 20px;
-    text-align: center;
-    font-style: italic;
-    color: #555;
-}
-/* 8. New Button Style */
-.btn-maroon {
-    background-color: var(--maroon);
-    color: var(--white);
-    font-size: 18px;
-    padding: 15px 35px;
-}
-.btn-maroon:hover {
-    background-color: #6d1631; /* Darker maroon */
-    color: var(--white);
-}
-
-/* 9. Hero Section Styles */
+/* Hero Section Styles */
 .hero-section {
-    background-color: var(--white);
-    padding: 80px 0;
-    overflow: hidden; /* Important for containing the shapes */
+  background-color: var(--white);
+  padding: 80px 0;
+  overflow: hidden;
 }
 .hero-container {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .hero-content {
-    flex: 1;
-    z-index: 10; /* Ensure text is above shapes */
+  flex: 1;
+  z-index: 10;
 }
 .hero-visual {
-    flex: 1;
-    position: relative;
-    min-height: 450px; /* Give space for the shapes */
+  flex: 1;
+  position: relative;
+  min-height: 450px;
 }
 
-/* 10. Hero Typography */
+/* Hero Typography */
 .hero-title {
-    font-size: 52px;
-    font-weight: 800; /* Extra bold */
-    color: var(--maroon);
-    line-height: 1.2;
-    margin-bottom: 10px;
+  font-size: 52px;
+  font-weight: 800;
+  color: var(--maroon);
+  line-height: 1.2;
+  margin-bottom: 10px;
 }
 .hero-subtitle {
-    font-size: 32px;
-    color: var(--primary-blue);
-    margin-bottom: 20px;
+  font-size: 32px;
+  color: var(--primary-blue);
+  margin-bottom: 20px;
 }
 .hero-text {
-    font-size: 18px;
-    color: #555;
-    line-height: 1.7;
-    margin-bottom: 40px;
-    max-width: 500px;
+  font-size: 18px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  max-width: 500px;
 }
 
-/* 11. Hero Visuals & Shapes (Absolute Positioning) */
+/* Hero Visuals & Shapes */
 .shape {
-    position: absolute;
-    border-radius: 30px;
+  position: absolute;
+  border-radius: 30px;
 }
 .shape-blue-1 {
-    width: 200px;
-    height: 200px;
-    background-color: var(--primary-blue);
-    top: 150px;
-    left: 20px;
-    border-radius: 50px;
+  width: 200px;
+  height: 200px;
+  background-color: var(--primary-blue);
+  top: 150px;
+  left: 20px;
+  border-radius: 50px;
 }
 .shape-yellow-1 {
-    width: 150px;
-    height: 150px;
-    background-color: #F7E546;
-    top: 20px;
-    left: 200px;
-    border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  background-color: #F7E546;
+  top: 20px;
+  left: 200px;
+  border-radius: 50%;
 }
 .shape-maroon-1 {
-    width: 80px;
-    height: 80px;
-    background-color: var(--maroon);
-    top: 250px;
-    left: 300px;
-    border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  background-color: var(--maroon);
+  top: 250px;
+  left: 300px;
+  border-radius: 50%;
 }
-
 .hero-image {
-    position: absolute;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    overflow: hidden;
+  position: absolute;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  overflow: hidden;
 }
 .hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .hero-image.image-1 {
-    width: 280px;
-    height: 180px;
-    top: 50px;
-    right: 30px;
-    transform: rotate(5deg);
-    z-index: 5;
+  width: 280px;
+  height: 180px;
+  top: 50px;
+  right: 30px;
+  transform: rotate(5deg);
+  z-index: 5;
 }
 .hero-image.image-2 {
-    width: 250px;
-    height: 300px;
-    top: 150px;
-    right: 150px;
-    transform: rotate(-8deg);
-    z-index: 6;
+  width: 250px;
+  height: 300px;
+  top: 150px;
+  right: 150px;
+  transform: rotate(-8deg);
+  z-index: 6;
 }
 
-/* 12. Upload Form Section Styling */
+/* Upload Form Section Styling */
 .upload-section {
-    padding: 80px 0;
-    background-color: var(--light-gray-bg);
+  padding: 80px 0;
+  background-color: var(--light-gray-bg);
+}
+
+/* Button Styles */
+.btn-maroon {
+  background-color: var(--maroon);
+  color: var(--white);
+  font-size: 18px;
+  padding: 15px 35px;
+  border: none;
+}
+.btn-maroon:hover {
+  background-color: #6d1631;
+  color: var(--white);
+}
+
+/* Results Card Styles */
+.results-card {
+  background-color: #f0fffb;
+  border-left: 5px solid var(--accent-teal);
+  border-radius: var(--border-radius-md);
+  padding: 25px 30px;
+  max-width: 700px;
+  margin: 40px auto;
+  animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.results-title {
+  color: var(--accent-teal);
+  font-size: 22px;
+  margin-top: 0;
+}
+.result-item {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+.result-list {
+  padding-left: 20px;
+  margin-top: 5px;
+}
+.redirect-notice {
+  margin-top: 20px;
+  text-align: center;
+  font-style: italic;
+  color: #555;
+}
+
+/* Candidate Cards in Results */
+.candidate-card {
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--card-shadow);
+  padding: 1.5rem;
+  background-color: var(--white);
+  transition: transform 0.2s;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.candidate-card:hover {
+  transform: translateY(-3px);
+}
+.candidate-photo {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #dee2e6;
+}
+.rank-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #ffc107;
+  color: #000;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 1rem;
+}
+.text-label {
+  font-weight: 600;
+  color: #6c757d;
+}
+.summary-list {
+  font-size: 0.95rem;
+  padding-left: 1rem;
+}
+.toggle-btn {
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: #0d6efd;
+  background: none;
+  border: none;
+  padding: 0;
 }
