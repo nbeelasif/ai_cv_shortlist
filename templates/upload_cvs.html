@@ -13,7 +13,7 @@
       {% endif %}
     </div>
 
-    <form id="cv-upload-form" enctype="multipart/form-data">
+    <form method="POST" enctype="multipart/form-data" id="cv-upload-form">
       <div id="file-inputs-container">
         <div class="form-group mb-3">
           <label for="cvs_1" class="form-label">Resume #1</label>
@@ -50,29 +50,5 @@
     container.appendChild(inputGroup);
     counter++;
   }
-
-  // Intercept submit and redirect to /progress
-  document.getElementById("cv-upload-form").addEventListener("submit", async function(e) {
-    e.preventDefault();
-
-    const form = e.target;
-    const formData = new FormData(form);
-
-    try {
-      const response = await fetch("/upload_cvs", {
-        method: "POST",
-        body: formData,
-      });
-
-      if (response.ok) {
-        window.location.href = "/progress"; // This shows the spinner/progress bar
-      } else {
-        alert("Upload failed. Please try again.");
-      }
-    } catch (err) {
-      console.error("Upload error:", err);
-      alert("An error occurred. Please try again.");
-    }
-  });
 </script>
 {% endblock %}
