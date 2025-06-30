@@ -1,84 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Upload Job Description</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    .card-header {
-      font-size: 1.25rem;
-      font-weight: bold;
-      background-color: #f8f9fa;
-      border-bottom: 1px solid #dee2e6;
-    }
-    .parsed-section {
-      animation: fadeIn 0.6s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    h3.main-title {
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-  </style>
-</head>
-<body class="bg-light">
-  <div class="container mt-4">
+{% extends "base.html" %}
 
-    <!-- Logo -->
-    <div class="text-center mb-4">
-      <img src="{{ url_for('static', filename='images/Jusour-logo.png') }}" alt="Company Logo" height="90">
-    </div>
+{% block title %}Welcome to the AI Shortlisting POC{% endblock %}
 
-    <!-- Step Heading -->
-    <h3 class="main-title text-center">Step 1: Upload Job Description</h3>
-
-    <!-- Upload Form -->
-    <div class="card p-4 shadow-sm bg-white rounded mb-5">
-      <div class="card-header">Provide Job Description</div>
-      <form method="post" enctype="multipart/form-data">
-        <div class="mb-3 mt-3">
-      <textarea class="form-control" id="jd_text" name="jd_text" rows="6" maxlength="1500" placeholder="Paste your job description here (Max 1500 characters)"></textarea>
-      <small class="text-muted">Max: 1500 characters. Ensure clarity and relevance.</small>
-    </div>
-
-        <div class="mb-3">
-          <label for="jd_file" class="form-label">OR Upload JD File (PDF or DOCX)</label>
-          <input class="form-control" type="file" id="jd_file" name="jd_file" accept=".pdf,.docx">
+{% block content %}
+<section class="hero-section">
+    <div class="hero-container">
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to Jusour</h1>
+            <h2 class="hero-subtitle">A bridge to your new future</h2>
+            <p class="hero-text">
+                This AI-powered Proof of Concept demonstrates automated candidate shortlisting. It analyzes a job description and ranks CVs based on their relevance and qualifications.
+            </p>
+            <a href="#upload-form" class="btn btn-maroon">Start Here  ❯</a>
         </div>
-
-        <button type="submit" class="btn btn-primary w-100">Submit Job Description</button>
-      </form>
+        <div class="hero-visual">
+            <div class="shape shape-blue-1"></div>
+            <div class="shape shape-yellow-1"></div>
+            <div class="shape shape-maroon-1"></div>
+            <div class="hero-image image-1"><img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80" alt="Team meeting"></div>
+            <div class="hero-image image-2"><img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&q=80" alt="Reviewing documents"></div>
+        </div>
     </div>
+</section>
 
-    <!-- Parsed JD Details -->
-    {% if jd_content %}
-    <div class="card p-4 shadow-sm bg-white rounded parsed-section">
-      <h5 class="mb-3 text-success">✅ Job Description Parsed Successfully</h5>
-
-      <p><strong>Job Title:</strong> {{ jd_title }}</p>
-      <p><strong>Minimum Experience:</strong> {{ jd_experience }} years</p>
-      <p><strong>Key Requirements:</strong></p>
-      <ul>
-        {% for req in jd_skills %}
-        <li>{{ req }}</li>
-        {% endfor %}
-      </ul>
-
-      <hr>
-      <p><strong>Original JD Text:</strong></p>
-      <div class="bg-light p-3 border rounded" style="white-space: pre-wrap;">{{ jd_content }}</div>
-    </div>
-
-    <!-- Auto Redirect -->
-    <script>
-      setTimeout(function () {
-        window.location.href = "{{ url_for('upload_cvs') }}";
-      }, 3000); // Redirect in 3 seconds
-    </script>
+<div id="upload-form" class="upload-section">
+    {% if error %}
+        <div class="alert alert-danger" role="alert">{{ error }}</div>
     {% endif %}
-  </div>
-</body>
-</html>
+
+    <div class="form-card">
+        <div class="form-header">
+            <h2 class="form-title">Step 1: Provide Job Description</h2>
+            <p class="form-subtitle">Paste the job description or upload a file to begin.</p>
+        </div>
+        <form method="post" enctype="multipart/form-data" class="form-content">
+            <div class="form-group"><label for="jd_text" class="form-label">Paste Job Description</label><textarea class="form-control" id="jd_text" name="jd_text" rows="8" placeholder="e.g., Seeking a Senior Python Developer..."></textarea></div>
+            <div class="form-divider"><span>OR</span></div>
+            <div class="form-group"><label for="jd_file" class="form-label">Upload a File (PDF or DOCX)</label><input class="form-control" type="file" id="jd_file" name="jd_file" accept=".pdf,.docx"></div>
+            <button type="submit" class="btn btn-primary w-100 mt-3">Analyze Job Description</button>
+        </form>
+    </div>
+</div>
+
+{% if jd_content %}
+<div class="results-card">
+    <h3 class="results-title">✅ Job Description Parsed Successfully</h3>
+    <div class="result-item"><strong>Job Title:</strong> {{ jd_title }}</div>
+    <div class="result-item"><strong>Minimum Experience:</strong> {{ jd_experience }} years</div>
+    <div class="result-item"><strong>Key Requirements:</strong><ul class="result-list">{% for req in jd_skills %}<li>{{ req }}</li>{% endfor %}</ul></div>
+    <div class="redirect-notice"><p>Redirecting to the next step...</p></div>
+</div>
+<script>
+    setTimeout(function () {
+        window.location.href = "{{ url_for('upload_cvs') }}";
+    }, 3500);
+</script>
+{% endif %}
+{% endblock %}
