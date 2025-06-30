@@ -71,7 +71,7 @@
           </div>
 
           <div class="d-flex gap-2 mt-3">
-            <a href="{{ url_for('view_resume', filename=candidate.filename) }}" class="btn btn-outline-primary btn-sm" target="_blank">View Resume</a>
+            <a href="{{ url_for('view_resume', filename=candidate.filename) }}" class="btn btn-outline-primary btn-sm" target="_blank" title="Download Resume File">View Resume</a>
             <button class="btn btn-outline-success btn-sm">Interview</button>
           </div>
         </div>
@@ -88,12 +88,12 @@
           <h5 class="text-success">📊 Candidate Scoring Breakdown</h5>
           <ul class="small ps-3 mb-2">
             <li><strong>60–70%</strong> Resume Similarity (via TF-IDF matching)</li>
-            <li><strong>20–30%</strong> University Ranking (based on global databases)</li>
-            <li><strong>Adaptive Weights:</strong> Adjusted by Relevance classification</li>
+            <li><strong>20–30%</strong> University Ranking (global benchmark)</li>
+            <li><strong>Adaptive Weights:</strong> Adjusted by Relevance score (Matched / Partial)</li>
             <li><code>Final Score = (Similarity × Weight) + (Rank × Weight)</code></li>
           </ul>
           <div class="alert alert-info small mb-0">
-            Only candidates marked <strong>Matched</strong> or <strong>Partially Matched</strong> are scored.
+            Only candidates tagged as <strong>Matched</strong> or <strong>Partially Matched</strong> are scored.
           </div>
         </div>
       </div>
@@ -103,13 +103,13 @@
         <div class="card-body">
           <h5 class="text-primary">🧠 What the AI (LLM) Does</h5>
           <ul class="small ps-3 mb-2">
-            <li><strong>Job Understanding:</strong> Extracts role, required experience, and key skills from JD</li>
-            <li><strong>Candidate Relevance:</strong> Classifies each CV as <strong>Matched</strong>, <strong>Partially Matched</strong>, or <strong>Not Matched</strong></li>
-            <li><strong>Summary Generation:</strong> Highlights aligned vs non-aligned qualifications in clear bullets</li>
-            <li><strong>Domain Filtering:</strong> Rejects unrelated fields like marketing/accounting for technical roles</li>
+            <li><strong>Understands the Job:</strong> Extracts role, experience, and required skills</li>
+            <li><strong>Filters Candidates:</strong> Tags each CV as Matched, Partially Matched, or Not Matched</li>
+            <li><strong>Generates Insight:</strong> Bullet summary explaining which JD parts are met</li>
+            <li><strong>Rejects Irrelevance:</strong> Filters unrelated fields (e.g., accounting for data roles)</li>
           </ul>
           <div class="alert alert-secondary small mb-0">
-            The LLM simulates a recruiter’s judgment by analyzing CVs with real-world context and accuracy.
+            The LLM mimics a recruiter’s thinking using contextual evaluation.
           </div>
         </div>
       </div>
@@ -121,6 +121,5 @@
     <a href="{{ url_for('upload_cvs') }}" class="btn btn-outline-dark">Upload More CVs</a>
   </div>
 </div>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 {% endblock %}
